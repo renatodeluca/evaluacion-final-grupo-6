@@ -8,7 +8,7 @@ project:
     - assets/favicon-2025-20251031.svg  # Asegura que el favicon versionado llegue a docs/
 
 book:
-  title: El adulto mayor que cuida: la carga y relación con su bienestar
+  title: El adulto mayor que cuida. La carga y relación con su bienestar
   subtitle: Trabajo final
   output-file: reportes-facso-plantilla
   repo-url: https://github.com/KAravena/reportesfacsobook_template  #URL del repositorio del libro (cambia segun tu repo)
@@ -18,7 +18,7 @@ book:
       orcid: 0000-0000-0000-0000
     - name: Renato De Luca
       affiliation: Departamento de Sociologia, Universidad de Chile
-      orcid: 0000-0000-0000-0000
+      orcid: 0009-0000-8317-9162
     - name: Maite Jullian Corral
       affiliation: Departamento de Sociologia, Universidad de Chile
       orcid: 0000-0000-0000-0000
