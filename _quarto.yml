@@ -11,7 +11,7 @@ book:
   title: El adulto mayor que cuida. La carga y relación con su bienestar
   subtitle: Trabajo final
   output-file: reportes-facso-plantilla
-  repo-url: https://github.com/KAravena/reportesfacsobook_template  #URL del repositorio del libro (cambia segun tu repo)
+  repo-url: https://github.com/renatodeluca/evaluacion-final-grupo-6  #URL del repositorio del libro (cambia segun tu repo)
   author:
     - name: Benjamín Belmar
       affiliation: Departamento de Sociologia, Universidad de Chile
