@@ -3,3 +3,33 @@ title: "Métodos"
 ---
 
 Datos y protocolo de investigación
+
+a. Datos
+
+Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades (INE, 2025), y se llevó a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones (INE, 2025).
+
+b. Muestra
+
+Se realizó un muestreo probabilístico, filtrando la base para conservar sólo las observaciones de adultos mayores, es decir, personas de 60 años o más. Finalmente la muestra resultó en 10099 observaciones, con una distribución de 42.7% hombres y 57,3% mujeres.
+
+c. Variables
+
+Se seleccionaron dos variables de caracterización sociodemográfica: en primer lugar, la variable “edad”, la cual es continua y fue recodificada filtrando solo los casos de personas de 60 años o más, quedando como una variable con respuestas desde 60 años a 105 años. En segundo lugar la variable “sexo”, la cual es una variable dicotómica con posibilidades de respuesta: 1) hombre y 2) mujer.
+
+Se creó la variable “Tiempo total de trabajo no remunerado en un día tipo”, reuniendo las variables “ Tiempo de trabajo cuidados no remunerado día tipo”, “Tiempo de trabajo doméstico no remunerado para el propio hogar día tipo” y “Tiempo de trabajo voluntario y ayudas a otros hogares día tipo”, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 36,18 horas (expresadas en decimales), pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 23,4 horas.
+
+Para medir el bienestar objetivo se creó la variable “Tiempo dedicado al autocuidado y bienestar en un día tipo” que reúne las variables “Tiempo en cuidados personales y actividades fisiológicas” y “Tiempo en vida social, ocio y medios de comunicación masiva”, que también corresponde a una ponderación de las horas dedicadas a estas actividades en los días de semana y de fin de semana, resultando en las horas dedicadas en un día promedio. La variable final quedó con valores que van desde las 0 horas a las 46,71 horas, y como nuevamente se superaban las 24 horas, estos valores fuera de rango se eliminaron, quedando el máximo en 24. Para medir la “Satisfacción con la vida”, se usó una variable categórica tipo Likert, del módulo de Bienestar Subjetivo, donde se preguntaba por satisfacción con “Su vida en general”, cuyas posibilidades de respuesta iban del 1 al 5, donde 1 corresponde “totalmente insatisfecho(a)” y 5 a “totalmente satisfecho(a)”.
+
+Por último, se creó una escala de “Bienestar subjetivo de cuidadores” a partir de ocho variables tipo Likert, que evalúan percepciones de sobrecarga en dos grupos: cinco variables dirigidas a cuidadores de personas con dependencia funcional y tres dirigidas a cuidadores de niños, niñas y adolescentes (NNA). Las categorías de las variables dirigidas al último grupo fueron recodificadas para estar en el mismo sentido que las demás, yendo del 1 al 5, donde 1 es siempre y 5 es nunca. Esto resultó en una escala con valores del 1 al 5, donde 1 corresponde a un menor bienestar subjetivo y 5 a un mayor bienestar subjetivo.
+
+d. Estrategia de análisis
+
+Para el análisis, en primer lugar se realizó un análisis univariado de las variables seleccionadas, calculando medidas de dispersión para las variables cuantitativas y medidas de frecuencia para las variables categóricas.
+
+Para evaluar la hipótesis 1, se calculó el coeficiente de correlación de Pearson entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Tiempo dedicado a autocuidado y bienestar en un día tipo”, para evaluar si existe una correlación estadísticamente significativa entre las variables y si su asociación es negativa.
+
+Para evaluar la hipótesis 2, se calculó el coeficiente de correlación de Pearson entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Bienestar subjetivo de cuidadores”, para evaluar si la asociación entre estas variables es negativa y si es estadísticamente significativa.
+
+Para evaluar la hipótesis 3, se calculó el coeficiente de correlación de Spearman entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Satisfacción con la vida”, para evaluar si la relación entre estas variables es negativa y si es estadísticamente significativa.
+
+Los análisis estadísticos para contraste de hipótesis y análisis descriptivos se realizaron en el software R.

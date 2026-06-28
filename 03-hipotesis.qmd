@@ -3,3 +3,14 @@ title: "Hipótesis"
 ---
 
 Hipótesis de investigación. Deben ser pre-registradas.
+
+Para determinar asociaciones entre variables se plantearon las siguientes hipótesis:
+
+H1: Hay una asociación negativa entre la carga del trabajo de cuidados y el bienestar objetivo de
+adultos mayores.
+
+H2: Hay una asociación negativa entre la carga del trabajo de cuidados y el bienestar subjetivo
+de adultos mayores cuidadores.
+
+H3. Hay una asociación negativa entre la carga del trabajo de cuidados y la satisfacción con la
+vida de adultos mayores.
