@@ -1,0 +1,14 @@
+﻿---
+title: "Hipótesis"
+---
+Las hipotesis se encuentran pre-registradas en el repositorio de la [OSF](https://osf.io/), en este [enlace](https://osf.io/4xjye/). Sin embargo, esta investigación no se encuentra preprinteada, producto de que partes de esta investigación fue realizada por otras personas, por tanto realizar un preprint de esta investigación no es posible. No obstante, se puede acceder al pre-registro de las hipótesis en el enlace previamente mencionado. 
+
+Para determinar asociaciones entre variables se plantearon las siguientes hipótesis:
+
+- H1: Hay una asociación negativa entre la carga del trabajo de cuidados y el bienestar objetivo de adultos mayores.
+
+- H2: Hay una asociación negativa entre la carga del trabajo de cuidados y el bienestar subjetivo
+de adultos mayores cuidadores.
+
+- H3. Hay una asociación negativa entre la carga del trabajo de cuidados y la satisfacción con la
+vida de adultos mayores.

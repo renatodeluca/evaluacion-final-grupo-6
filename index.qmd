@@ -11,7 +11,7 @@ format:
 ---
 
 ::: {.content-visible when-format="pdf"}
-\small\textbf{Palabras clave:} Ciencia Social Abierta
+\small\textbf{Palabras clave:} adultos mayores, trabajo de cuidados no remunerado, bienestar subjetivo, satisfacción con la vida, género, Chile.
 \normalsize
 :::
 
@@ -20,7 +20,9 @@ format:
 nav#TOC { display: none !important; }
 div[data-when-format="pdf"] { display: none !important; }
 </style>
-<span class="keywords-line"><strong>Palabras clave:</strong> Ciencia Social Abierta</span>
+<span class="keywords-line"><strong>Palabras clave:</strong> adultos mayores, trabajo de cuidados no remunerado, bienestar subjetivo, satisfacción con la vida, género, Chile. </span>
 :::
 
 # Abstract {.unnumbered}
+
+Este estudio analiza la relación entre la carga de trabajo de cuidados no remunerados realizado por adultos mayores (60 años o más) y su bienestar objetivo, bienestar subjetivo y satisfacción con la vida en Chile. Utilizando datos de la II Encuesta Nacional del Uso del Tiempo (ENUT 2023), con una muestra de 10.099 observaciones, se calcularon correlaciones de Pearson y Spearman para contrastar tres hipótesis de asociación negativa. Los resultados muestran que, si bien en la muestra general existe una correlación positiva entre horas de trabajo no remunerado y bienestar objetivo, al filtrar por cuidadores específicos esta relación se invierte. En cambio, se confirman asociaciones negativas y estadísticamente significativas entre la carga de cuidados y el bienestar subjetivo (r = -0.207, p < 0.01), así como con la satisfacción con la vida (r = -0.070, p < 0.05). La brecha de género es marcada: las mujeres mayores dedican más del doble de horas a estas labores que los hombres y presentan correlaciones más intensas entre carga de cuidados y menor bienestar. Estos hallazgos evidencian la necesidad de visibilizar el trabajo de cuidados en la vejez e incorporar perspectivas de género y envejecimiento en el diseño de políticas públicas.

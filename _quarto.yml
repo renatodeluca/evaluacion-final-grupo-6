@@ -8,17 +8,17 @@ project:
     - assets/favicon-2025-20251031.svg  # Asegura que el favicon versionado llegue a docs/
 
 book:
-  title: El adulto mayor que cuida: la carga y relación con su bienestar
+  title: El adulto mayor que cuida. La carga y relación con su bienestar
   subtitle: Trabajo final
   output-file: reportes-facso-plantilla
-  repo-url: https://github.com/KAravena/reportesfacsobook_template  #URL del repositorio del libro (cambia segun tu repo)
+  repo-url: https://github.com/renatodeluca/evaluacion-final-grupo-6  #URL del repositorio del libro (cambia segun tu repo)
   author:
     - name: Benjamín Belmar
       affiliation: Departamento de Sociologia, Universidad de Chile
       orcid: 0000-0000-0000-0000
     - name: Renato De Luca
       affiliation: Departamento de Sociologia, Universidad de Chile
-      orcid: 0000-0000-0000-0000
+      orcid: 0009-0000-8317-9162
     - name: Maite Jullian Corral
       affiliation: Departamento de Sociologia, Universidad de Chile
       orcid: 0000-0000-0000-0000
@@ -44,10 +44,11 @@ book:
     - index.qmd            # Capitulo inicial o resumen ejecutivo
     - 01-introduccion.qmd
     - 02-antecedentes.qmd
-    - 03-hipotesis.qmd
-    - 04-metodos.qmd
-    - 05-resultados.qmd
-    - 06-conclusiones.qmd
+    - 03-conceptos-centrales.qmd
+    - 04-hipotesis.qmd
+    - 05-metodos.qmd
+    - 06-resultados.qmd
+    - 07-conclusiones.qmd
     - references.qmd
     # Para agregar un nuevo capitulo duplica un archivo .qmd y agregalo aqui:
     # ej: - 07-analisis-cualitativo.qmd
