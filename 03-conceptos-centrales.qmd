@@ -8,41 +8,22 @@ conceptos son fundamentales para poder responder a la pregunta de investigación
 la relación entre la carga de trabajo de cuidados realizados por adultos mayores con su bienestar
 objetivo, su bienestar subjetivo y su satisfacción con la vida.
 
-En primera instancia, el bienestar subjetivo se comprende como la evaluación global de la vida,
-que según el psicólogo estadounidense Ed Diener (1946) en El bienestar subjetivo (1994), se
-caracteriza según tres medidas distintivas. En primer lugar, es subjetivo, en tanto reside en la
-experiencia personal del individuo. En segundo lugar, incluye medidas positivas (no solo la
-ausencia de factores negativos). Y en tercer lugar, incluye una evaluación global de todos los
-aspectos de la vida de una persona.
+En primera instancia, el bienestar subjetivo se comprende como la evaluación global de la vida, que según el psicólogo estadounidense @diener_subjective_1984 se caracteriza según tres medidas distintivas. En primer lugar, es subjetivo, en tanto reside en la experiencia personal del individuo. En segundo lugar, incluye medidas positivas (no solo la ausencia de factores negativos). Y en tercer lugar, incluye una evaluación global de todos los aspectos de la vida de una persona.
 
-Además, el autor hace una revisión de distintas teorías e identifica tres formas desde las cuales se
-comprende el bienestar subjetivo: (1) como noción normativa, que considera la felicidad como
-cualidad deseable; (2) como satisfacción con la vida, entendida como la autoevaluación que
-realiza el propio informante de lo que entiende como buena vida; y (3) como experiencia
-emocional placentera, es decir, cuando hay preponderancia de un afecto positivo sobre otro
-negativo. El afecto y la satisfacción pueden evaluarse de modo particular, sin embargo, en los
-estudios que siguen esta línea se pone el énfasis en el juicio integrador de la vida de la persona.
-Esto puede comprender un período que va desde unas pocas semanas hasta una vida completa.
+Además, el autor hace una revisión de distintas teorías e identifica tres formas desde las cuales se comprende el bienestar subjetivo: (1) como noción normativa, que considera la felicidad como cualidad deseable; (2) como satisfacción con la vida, entendida como la autoevaluación que realiza el propio informante de lo que entiende como buena vida; y (3) como experiencia emocional placentera, es decir, cuando hay preponderancia de un afecto positivo sobre otro negativo [@diener_subjective_1984]. El afecto y la satisfacción pueden evaluarse de modo particular, sin embargo, en los estudios que siguen esta línea se pone el énfasis en el juicio integrador de la vida de la persona. Esto puede comprender un período que va desde unas pocas semanas hasta una vida completa.
 
-Wilson (1967, en Diener 1994) propone que quienes tienen más ventajas son más felices.
-Concluía que la persona feliz se muestra según varias características; sin embargo, para el interés
-de esta investigación destaca que se muestra como joven, saludable, bien remunerada,
-extrovertida, optimista, libre de preocupaciones, casada, con una alta autoestima, una gran moral
-de trabajo, aspiraciones modestas y perteneciente a cualquier sexo.
-
+Wilson [1967, en @diener_subjective_1984] propone que quienes tienen más ventajas son más felices. Concluía que la persona feliz se muestra según varias características; sin embargo, para el interés de esta investigación destaca que se muestra como joven, saludable, bien remunerada, extrovertida, optimista, libre de preocupaciones, casada, con una alta autoestima, una gran moral de trabajo, aspiraciones modestas y perteneciente a cualquier sexo.
 
 Respecto a la edad en particular, la literatura presenta hallazgos mixtos y a veces contradictorios
-sobre su relación con la felicidad (comprendida como dimensión del bienestar subjetivo).
-Aunque algunos estudios sugieren que las personas jóvenes son más felices que las personas de
-edad avanzada (Bradburn y Caplovitz, 1965; Gurin, Veroff y Feld, 1960; Kuhlen, 1948;
-Wessman, 1957; Wilson, 1967, en Diener, 1994), estudios más recientes han concluido que no
+sobre su relación con la felicidad (comprendida como dimensión del bienestar subjetivo). Aunque algunos estudios sugieren que las personas jóvenes son más felices que las personas de edad avanzada (Bradburn y Caplovitz, 1965; Gurin, Veroff y Feld, 1960; Kuhlen, 1948;
+Wessman, 1957; Wilson, 1967, en @diener_subjective_1984), estudios más recientes han concluido que no
 hay efectos significativos de la edad sobre el bienestar subjetivo (Alston et al., 1974; Andrews y
-Withey, 1976; Cameron, 1975; Sauer, 1977; Spreitzer y Snyder, 1974, en Diener, 1994). Algunos
+Withey, 1976; Cameron, 1975; Sauer, 1977; Spreitzer y Snyder, 1974, en @diener_subjective_1984). Algunos
 estudios incluso han encontrado una correlación positiva entre la edad y la satisfacción (Bortner
-y Hultsch, 1970; Cantril, 1965; Clemente y Sauer, 1976a; Medley, 1980, en Diener, 1994). Otros
+y Hultsch, 1970; Cantril, 1965; Clemente y Sauer, 1976a; Medley, 1980, en @diener_subjective_1984). Otros
 han observado que los jóvenes reportan niveles más altos tanto de afecto positivo como negativo,
 lo que indicaría que, en general, experimentan emociones de forma más intensa (Braun, 1977, en
-Diener, 1994).
+@diener_subjective_1984).
 
 En las definiciones de bienestar subjetivo hay ausencia de aquellas sobre condiciones objetivas
 como la salud, el confort, la virtud o la riqueza, que son vistas más bien como factores
