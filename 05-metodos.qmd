@@ -6,7 +6,7 @@ Datos y protocolo de investigación
 
 ## Datos
 
-Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades (INE, 2025), y se llevó a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones (INE, 2025).
+Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades, llevada a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones [@__a].
 
 ## Muestra
 
