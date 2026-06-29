@@ -26,7 +26,7 @@ existen ciertos requerimientos comunes a todo ser humano  (Doyal y Gough, 1994),
 condiciones materiales, de salud y sociales. Debido a que hay estándares objetivos de la buena
 vida, estos pueden ser evaluados de forma observable y medible. Para esto existen herramientas
 como el Índice de Desarrollo Humano (IDH), reconocido a nivel internacional, y el Índice para
-una Vida Mejor (Better Life Index) de la OCDE. Ambos miden, además de condiciones
+una Vida Mejor [@organisationforeconomicco-operationanddevelopment_better_] de la OCDE. Ambos miden, además de condiciones
 subjetivas, dimensiones objetivas del bienestar como el acceso a vivienda, ingresos, empleo,
 comunidad, salud, seguridad y equilibrio entre la vida laboral y personal.
 

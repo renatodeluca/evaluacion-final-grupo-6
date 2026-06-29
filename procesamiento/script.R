@@ -145,6 +145,10 @@ rownames(M) <- c("Horas de trabajo no remunerado",
                  "Bienestar subjetivo")
 colnames(M) <- rownames(M) 
 
+# graficos ------------------------------------------------------------------------------------------------
+#--------
+#-------
+#----
 corrplot::corrplot(M,
                    method = "color",
                    tl.cex = 0.6,
