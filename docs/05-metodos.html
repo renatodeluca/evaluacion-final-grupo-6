@@ -58,7 +58,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fd5297dacf173028d6edd3476b8de6b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-18c4648ec6b711cbdcb06aa220cd8088.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -109,27 +129,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <style>
-
 #quarto-document-content p,
-
 .page-columns .content p,
-
 .page-columns p,
-
 .quarto-article p,
-
 main.content p,
-
 p {
-
   text-align: justify !important;
-
   text-justify: inter-word;
-
 }
-
 </style>
-
 
 
 <link rel="stylesheet" href="assets/styles.scss">
@@ -266,7 +275,11 @@ p {
   <ul>
   <li><a href="#datos" id="toc-datos" class="nav-link active" data-scroll-target="#datos"><span class="header-section-number">6.1</span> Datos</a></li>
   <li><a href="#muestra" id="toc-muestra" class="nav-link" data-scroll-target="#muestra"><span class="header-section-number">6.2</span> Muestra</a></li>
-  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">6.3</span> Variables</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">6.3</span> Variables</a>
+  <ul class="collapse">
+  <li><a href="#variables-de-caracterización-sociodemográfica" id="toc-variables-de-caracterización-sociodemográfica" class="nav-link" data-scroll-target="#variables-de-caracterización-sociodemográfica"><span class="header-section-number">6.3.1</span> Variables de caracterización sociodemográfica</a></li>
+  <li><a href="#variables-de-interés" id="toc-variables-de-interés" class="nav-link" data-scroll-target="#variables-de-interés"><span class="header-section-number">6.3.2</span> Variables de interés</a></li>
+  </ul></li>
   <li><a href="#estrategia-de-análisis" id="toc-estrategia-de-análisis" class="nav-link" data-scroll-target="#estrategia-de-análisis"><span class="header-section-number">6.4</span> Estrategia de análisis</a></li>
   </ul>
 </nav>
@@ -296,7 +309,7 @@ p {
 <p>Datos y protocolo de investigación</p>
 <section id="datos" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="datos"><span class="header-section-number">6.1</span> Datos</h2>
-<p>Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades (INE, 2025), y se llevó a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones (INE, 2025).</p>
+<p>Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades, llevada a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones <span class="citation" data-cites="__a">(<a href="references.html#ref-__a" role="doc-biblioref">Estadisticas, 2025</a>)</span>.</p>
 </section>
 <section id="muestra" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="muestra"><span class="header-section-number">6.2</span> Muestra</h2>
@@ -304,10 +317,22 @@ p {
 </section>
 <section id="variables" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="variables"><span class="header-section-number">6.3</span> Variables</h2>
-<p>Se seleccionaron dos variables de caracterización sociodemográfica: en primer lugar, la variable “edad”, la cual es continua y fue recodificada filtrando solo los casos de personas de 60 años o más, quedando como una variable con respuestas desde 60 años a 105 años. En segundo lugar la variable “sexo”, la cual es una variable dicotómica con posibilidades de respuesta: 1) hombre y 2) mujer.</p>
-<p>Se creó la variable “Tiempo total de trabajo no remunerado en un día tipo”, reuniendo las variables “ Tiempo de trabajo cuidados no remunerado día tipo”, “Tiempo de trabajo doméstico no remunerado para el propio hogar día tipo” y “Tiempo de trabajo voluntario y ayudas a otros hogares día tipo”, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 36,18 horas (expresadas en decimales), pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 23,4 horas.</p>
-<p>Para medir el bienestar objetivo se creó la variable “Tiempo dedicado al autocuidado y bienestar en un día tipo” que reúne las variables “Tiempo en cuidados personales y actividades fisiológicas” y “Tiempo en vida social, ocio y medios de comunicación masiva”, que también corresponde a una ponderación de las horas dedicadas a estas actividades en los días de semana y de fin de semana, resultando en las horas dedicadas en un día promedio. La variable final quedó con valores que van desde las 0 horas a las 46,71 horas, y como nuevamente se superaban las 24 horas, estos valores fuera de rango se eliminaron, quedando el máximo en 24. Para medir la “Satisfacción con la vida”, se usó una variable categórica tipo Likert, del módulo de Bienestar Subjetivo, donde se preguntaba por satisfacción con “Su vida en general”, cuyas posibilidades de respuesta iban del 1 al 5, donde 1 corresponde “totalmente insatisfecho(a)” y 5 a “totalmente satisfecho(a)”.</p>
-<p>Por último, se creó una escala de “Bienestar subjetivo de cuidadores” a partir de ocho variables tipo Likert, que evalúan percepciones de sobrecarga en dos grupos: cinco variables dirigidas a cuidadores de personas con dependencia funcional y tres dirigidas a cuidadores de niños, niñas y adolescentes (NNA). Las categorías de las variables dirigidas al último grupo fueron recodificadas para estar en el mismo sentido que las demás, yendo del 1 al 5, donde 1 es siempre y 5 es nunca. Esto resultó en una escala con valores del 1 al 5, donde 1 corresponde a un menor bienestar subjetivo y 5 a un mayor bienestar subjetivo.</p>
+<section id="variables-de-caracterización-sociodemográfica" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="variables-de-caracterización-sociodemográfica"><span class="header-section-number">6.3.1</span> Variables de caracterización sociodemográfica</h3>
+<ul>
+<li><strong>Edad</strong>: Variable continua, recodificada para filtrar solo los casos de personas de 60 años o más, con valores desde 60 a 105 años.</li>
+<li><strong>Sexo</strong>: Variable dicotómica con posibilidades de respuesta: 1) hombre y 2) mujer.</li>
+</ul>
+</section>
+<section id="variables-de-interés" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="variables-de-interés"><span class="header-section-number">6.3.2</span> Variables de interés</h3>
+<ul>
+<li><p><strong>Tiempo total de trabajo no remunerado en un día tipo</strong>: Variable que mide la cantidad de horas dedicadas a trabajo no remunerado en un día promedio. Formada por la suma de las variables <code>Tiempo total de trabajo no remunerado en un día tipo</code>, <code>Tiempo de trabajo doméstico no remunerado para el propio hogar día tipo</code> y <code>Tiempo de trabajo voluntario y ayudas a otros hogares día tipo</code>, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 36,18 horas (expresadas en decimales), pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 23,4 horas.</p></li>
+<li><p><strong>Tiempo dedicado al autocuidado y bienestar en un día tipo</strong>: Variable que mide la cantidad de horas dedicadas a autocuidado y bienestar en un día promedio. Formada por la suma de las variables <code>Tiempo en cuidados personales y actividades fisiológicas</code> y <code>Tiempo en vida social, ocio y medios de comunicación masiva</code>, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 46,71 horas, pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 24 horas.</p></li>
+<li><p><strong>Satisfacción con la vida</strong>: Variable creada a partir de una variable categórica tipo Likert, del módulo de Bienestar Subjetivo, donde se preguntaba por satisfacción con “Su vida en general”, cuyas posibilidades de respuesta iban del 1 al 5, donde 1 corresponde “totalmente insatisfecho(a)” y 5 a “totalmente satisfecho(a)”.</p></li>
+<li><p><strong>Bienestar subjetivo de cuidadores</strong>: Variable creada a partir de ocho variables tipo Likert, que evalúan percepciones de sobrecarga en dos grupos: cinco variables dirigidas a cuidadores de personas con dependencia funcional y tres dirigidas a cuidadores de niños, niñas y adolescentes (NNA). Las categorías de las variables dirigidas al último grupo fueron recodificadas para estar en el mismo sentido que las demás, yendo del 1 al 5, donde 1 es siempre y 5 es nunca. Esto resultó en una escala con valores del 1 al 5, donde 1 corresponde a un menor bienestar subjetivo y 5 a un mayor bienestar subjetivo.</p></li>
+</ul>
+</section>
 </section>
 <section id="estrategia-de-análisis" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="estrategia-de-análisis"><span class="header-section-number">6.4</span> Estrategia de análisis</h2>
@@ -320,1449 +345,734 @@ p {
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-__a" class="csl-entry" role="listitem">
+Estadisticas, I. N. de. (2025). <em>Informe <span>Principales</span> <span>Resultados</span></em>. INE. <a href="http://www.ine.gob.cl/docs/default-source/uso-del-tiempo-tiempo-libre/publicaciones-y-anuarios/ii-enut/informe-de-principales-resultados-ii-enut-2023.pdf?sfvrsn=ee33c12c_4">http://www.ine.gob.cl/docs/default-source/uso-del-tiempo-tiempo-libre/publicaciones-y-anuarios/ii-enut/informe-de-principales-resultados-ii-enut-2023.pdf?sfvrsn=ee33c12c_4</a>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
 <script>
-
 window.addEventListener('load', function () {
-
   const selectors = [
-
     '.quarto-sidebar .logo img',
-
     '.quarto-sidebar .quarto-logo img',
-
     '.sidebar-logo img',
-
     '.site-logo img',
-
     'a.quarto-site-logo img'
-
   ];
 
-
-
   let logoImg = null;
-
   for (const selector of selectors) {
-
     logoImg = document.querySelector(selector);
-
     if (logoImg) break;
-
   }
-
-
 
   if (logoImg) {
-
     const link = document.createElement('a');
-
     link.href = 'index.html';
-
     logoImg.parentNode.insertBefore(link, logoImg);
-
     link.appendChild(logoImg);
-
   }
 
-
-
   const decodeMeta = (value) => {
-
     if (!value) return '';
-
     const trimmed = value.trim();
-
     if (!trimmed || trimmed.startsWith('{{')) return '';
-
     const textarea = document.createElement('textarea');
-
     textarea.innerHTML = trimmed;
-
     return textarea.value.trim();
-
   };
-
-
 
   const metaRepoUrl = decodeMeta('https://github.com/renatodeluca/evaluacion-final-grupo-6');
-
   const metaRepoUrlNormalized = metaRepoUrl ? metaRepoUrl.replace(/\/+$/g, '') : '';
 
-
-
   const computeArchiveUrl = (hrefHint) => {
-
     const baseHref = (hrefHint || metaRepoUrlNormalized || metaRepoUrl || '').trim();
-
     if (!baseHref) return '';
 
-
-
     try {
-
       const url = new URL(baseHref, window.location.href);
-
       const pathnameRaw = url.pathname.replace(/\/+$/g, '');
-
       const normalizeBranch = (value) => {
-
         const branch = (value || '').trim();
-
         return branch ? branch : 'main';
-
       };
 
-
-
       if (url.hostname.includes('github.')) {
-
         const match = pathnameRaw.match(/^\/([^/]+)\/([^/]+)(?:\/(tree|blob)\/([^/]+).*)?$/);
-
         if (!match) return '';
 
-
-
         const owner = match[1];
-
         const repo = match[2].replace(/\.git$/i, '');
-
         const branchFromPath = match[4];
-
         const branch = normalizeBranch(branchFromPath || url.searchParams.get('branch'));
 
-
-
         return `${url.origin}/${owner}/${repo}/archive/refs/heads/${branch}.zip`;
-
       }
-
-
 
       if (url.hostname.includes('gitlab.')) {
-
         const match = pathnameRaw.match(/^\/(.+?)(?:\/-\/tree\/([^/]+).*)?$/);
-
         if (!match) return '';
-
-
 
         const projectPath = match[1].replace(/\/+$/g, '');
-
         const repoName = projectPath.split('/').pop();
-
         const branchFromPath = match[2];
-
         const branch = normalizeBranch(branchFromPath || url.searchParams.get('ref')); // GitLab often uses ref param
 
-
-
         return `${url.origin}/${projectPath}/-/archive/${branch}/${repoName}-${branch}.zip`;
-
       }
-
-
 
       if (url.hostname.includes('bitbucket.')) {
-
         const match = pathnameRaw.match(/^\/([^/]+)\/([^/]+)(?:\/src\/([^/]+).*)?$/);
-
         if (!match) return '';
 
-
-
         const owner = match[1];
-
         const repo = match[2].replace(/\.git$/i, '');
-
         const branchFromPath = match[3];
-
         const branch = normalizeBranch(branchFromPath || url.searchParams.get('at'));
 
-
-
         return `${url.origin}/${owner}/${repo}/get/${branch}.zip`;
-
       }
-
-
 
       const branch = normalizeBranch(url.searchParams.get('branch'));
-
       return `${baseHref.replace(/\/+$/g, '')}/archive/refs/heads/${branch}.zip`;
-
     } catch (error) {
-
       return '';
-
     }
-
   };
 
-
-
   const ensureDownloadButton = (fromObserver = false) => {
-
     const tools = document.querySelector('.sidebar-title .sidebar-tools-main');
-
     if (!tools) {
-
       if (!fromObserver) {
-
         window.setTimeout(() => ensureDownloadButton(false), 100);
-
       }
-
       return;
-
     }
-
-
 
     let download = tools.querySelector('[data-template-download]');
-
     if (!download) {
-
       download = document.createElement('a');
-
       download.className = 'quarto-navigation-tool px-1';
-
       download.title = 'Descargar ZIP';
-
       download.setAttribute('aria-label', 'Descargar plantilla (ZIP)');
-
       download.setAttribute('data-template-download', 'true');
-
       download.target = '_blank';
-
       download.rel = 'noopener';
-
       download.innerHTML = '<i class="bi bi-download"></i>';
-
     }
-
-
 
     const links = Array.from(tools.querySelectorAll('a.quarto-navigation-tool'));
-
     let repoLink = null;
 
-
-
     if (metaRepoUrlNormalized) {
-
       repoLink = links.find((anchor) => {
-
         if (anchor === download) return false;
-
         const href = anchor.href ? anchor.href.replace(/\/+$/g, '') : '';
-
         return href === metaRepoUrlNormalized;
-
       });
-
     }
 
-
-
     if (!repoLink) {
-
       repoLink = links.find((anchor) => anchor !== download && anchor.querySelector('.bi-github'));
-
     }
-
-
 
     if (!repoLink) {
-
       repoLink = links.find((anchor) => {
-
         if (anchor === download) return false;
-
         const href = anchor.href || '';
-
         return /github\.|gitlab\.|bitbucket\./i.test(href);
-
       });
-
     }
-
-
 
     const archiveUrl = computeArchiveUrl(repoLink ? repoLink.href : undefined);
 
-
-
     if (!archiveUrl) {
-
       if (download.parentNode) {
-
         download.parentNode.removeChild(download);
-
       }
-
       return;
-
     }
-
-
 
     download.href = archiveUrl;
-
     download.title = 'Descargar plantilla (ZIP)';
-
     download.setAttribute('aria-label', 'Descargar plantilla (ZIP)');
-
     const codeToggle = links.find((anchor) => anchor.classList.contains('global-code-toggle'));
 
-
-
     if (repoLink) {
-
       repoLink.insertAdjacentElement('afterend', download);
-
     } else if (codeToggle) {
-
       codeToggle.insertAdjacentElement('beforebegin', download);
-
     } else {
-
       tools.insertBefore(download, tools.firstChild);
-
     }
-
   };
-
-
 
   ensureDownloadButton();
 
-
-
   const observer = new MutationObserver((mutations) => {
-
     const shouldUpdate = mutations.some((mutation) => {
-
       if (mutation.type !== 'childList') {
-
         return false;
-
       }
-
       return Array.from(mutation.addedNodes).some((node) => {
-
         if (!(node instanceof HTMLElement)) {
-
           return false;
-
         }
-
         return (
-
           node.classList.contains('global-code-toggle') ||
-
           (node.querySelector && node.querySelector('.global-code-toggle'))
-
         );
-
       });
-
     });
-
-
 
     if (shouldUpdate) {
-
       ensureDownloadButton(true);
-
     }
-
   });
 
-
-
   observer.observe(document.body, { childList: true, subtree: true });
-
 });
-
 </script>
-
 <script>
-
 (function () {
-
   var isReferences = /(?:^|\/)references\.html(?:#|$)/i.test(window.location.pathname);
 
-
-
   // Base relativa que Quarto publica (para apéndices/…)
-
   var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
-
   var base = (offsetMeta && offsetMeta.content) ? offsetMeta.content : "";
 
-
-
   // 1) En capítulos: reescribe enlaces de cita -> references.html#ref-*
-
   if (!isReferences) {
-
     var cites = document.querySelectorAll('a[role="doc-biblioref"][href^="#ref-"]');
-
     cites.forEach(function (a) {
-
       var hash = a.getAttribute('href'); // "#ref-xxx"
-
       // Conserva tooltips. Añade marca para mostrar "volver" luego.
-
       a.setAttribute('href', base + 'references.html' + hash);
-
       a.setAttribute('data-citefix', 'from-chapter');
-
     });
 
-
-
     // Oculta bibliografía local si citeproc la insertó
-
     var localRefsBlocks = document.querySelectorAll('section.footnotes, div#refs, div.references, section#references');
-
     localRefsBlocks.forEach(function (el) { el.style.display = 'none'; });
-
   }
-
-
 
   // 2) En references.html: añade botón "Volver" si se llega desde otra página
-
   if (isReferences) {
-
     var cameFromOutside = document.referrer && !/\/references\.html(?:#|$)/i.test(new URL(document.referrer).pathname);
-
     if (cameFromOutside && window.history && window.history.length > 1) {
-
       var btn = document.createElement('button');
-
       btn.type = 'button';
-
       btn.textContent = '← Volver';
-
       btn.setAttribute('aria-label', 'Volver a la página anterior');
-
       btn.style.position = 'fixed';
-
       btn.style.right = '1rem';
-
       btn.style.bottom = '1rem';
-
       btn.style.zIndex = '9999';
-
       btn.style.padding = '.6rem .9rem';
-
       btn.style.borderRadius = '10px';
-
       btn.style.border = '1px solid rgba(0,0,0,.15)';
-
       btn.style.background = 'var(--bs-body-bg, #fff)';
-
       btn.style.color = 'var(--bs-body-color, #111)';
-
       btn.style.boxShadow = '0 6px 16px rgba(0,0,0,.12)';
-
       btn.onclick = function () { history.back(); };
-
       document.body.appendChild(btn);
-
     }
-
-
 
     // Si llegamos con hash (#ref-xxx), desplaza con un pequeño retardo
-
     // para asegurar que el layout esté listo.
-
     if (location.hash && /^#ref-/.test(location.hash)) {
-
       setTimeout(function () {
-
         try {
-
           var target = document.getElementById(location.hash.substring(1));
-
           if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
-
         } catch (e) {}
-
       }, 50);
-
     }
-
   }
-
 })();
-
 </script>
 
-
-
 <style>
-
 /* Evita que el ancla de referencias quede “tapada” por el encabezado */
-
 .csl-entry[id^="ref-"],
-
 [id^="ref-"] { scroll-margin-top: 90px; }
 
-
-
 /* Ajuste suave para tooltips / focos de enlaces */
-
 a[role="doc-biblioref"]:focus-visible {
-
   outline: 2px dashed var(--facso-2, #84A7D8);
-
   outline-offset: 2px;
-
 }
 
-
-
 /* Opcional: separadores más legibles en la lista de referencias */
-
 #refs .csl-entry { padding: .25rem 0; border-bottom: 1px dashed rgba(0,0,0,.06); }
-
 #refs .csl-entry:last-child { border-bottom: none; }
-
 </style>
-
 <script>
-
 document.addEventListener("DOMContentLoaded", () => {
-
   const parseNumberParts = (value) =>
-
     (value || "")
-
       .split(".")
-
       .map((part) => parseInt(part, 10))
-
       .filter((num) => !Number.isNaN(num));
-
-
 
   const formatNumberParts = (parts) => parts.join(".");
 
-
-
   const adjustNumber = (value) => {
-
     const trimmed = (value || "").trim();
-
     if (!/^\d/.test(trimmed)) {
-
       return trimmed;
-
     }
-
     const parts = parseNumberParts(trimmed);
-
     if (!parts.length) {
-
       return "";
-
     }
-
   parts[0] = parts[0] - 1;
-
     if (parts[0] <= 0) {
-
       return "";
-
     }
-
     return formatNumberParts(parts);
-
   };
-
-
 
   const removeSpacer = (node) => {
-
     let sibling = node.nextSibling;
-
     while (sibling && sibling.nodeType === Node.TEXT_NODE) {
-
       const cleaned = sibling.textContent.replace(/\u00a0/g, "").trim();
-
       const next = sibling.nextSibling;
-
       if (cleaned.length === 0) {
-
         sibling.remove();
-
         sibling = next;
-
       } else {
-
         break;
-
       }
-
     }
-
   };
-
-
 
   const clearNumber = (node) => {
-
     if (!node) return;
-
     node.textContent = "";
-
     node.classList.add("chapter-number--hidden");
-
     node.style.display = "none";
-
     removeSpacer(node);
-
   };
 
-
-
   const ensureChapterSpacing = (node) => {
-
     if (!node || !node.classList.contains("chapter-number")) return;
 
-
-
     let numeric = (node.textContent || "").replace(/\.+\s*$/u, "");
-
     if (!numeric) return;
-
-
 
     node.textContent = numeric;
 
-
-
     const contextsNeedingSpace = node.closest(".quarto-title-block") ||
-
       node.closest("nav.quarto-page-breadcrumbs");
-
-
 
     node.textContent = `${numeric}.`;
 
-
-
     if (contextsNeedingSpace) {
-
       const next = node.nextSibling;
-
       const hasWhitespaceText =
-
         next &&
-
         next.nodeType === Node.TEXT_NODE &&
-
         /\s/.test(next.textContent || "");
-
       if (!hasWhitespaceText) {
-
         node.insertAdjacentText("afterend", "\u00a0");
-
       }
-
     }
-
   };
-
-
 
   const applyNumber = (node) => {
-
     if (!node) return;
-
     const adjusted = adjustNumber(node.textContent);
-
     if (!adjusted) {
-
       clearNumber(node);
-
     } else {
-
       node.textContent = adjusted;
-
       node.classList.remove("chapter-number--hidden");
-
       node.style.display = "inline-block";
-
       removeSpacer(node);
-
       ensureChapterSpacing(node);
-
     }
-
   };
-
-
 
   const updateDataNumber = (node) => {
-
     const current = node.getAttribute("data-number");
-
     if (current === null) return;
-
     const adjusted = adjustNumber(current);
-
     if (adjusted) {
-
       node.setAttribute("data-number", adjusted);
-
     } else {
-
       node.removeAttribute("data-number");
-
     }
-
   };
 
-
-
   const isFrontMatterHref = (href) =>
-
     /\/?index\.html(?:#|$)/i.test(href || "") ||
-
     /\/?00-prefacio\.html(?:#|$)/i.test(href || "");
 
-
-
   document
-
     .querySelectorAll(".sidebar .chapter-number")
-
     .forEach((node) => {
-
       const link = node.closest("a");
-
       const href = link ? link.getAttribute("href") : "";
-
       if (isFrontMatterHref(href)) {
-
         clearNumber(node);
-
       } else {
-
         applyNumber(node);
-
       }
-
     });
-
-
 
   const pathname = window.location.pathname || "";
 
-
-
   document
-
     .querySelectorAll('.quarto-title-block .chapter-number')
-
     .forEach((node) => {
-
       if (isFrontMatterHref(pathname)) {
-
         clearNumber(node);
-
       } else {
-
         applyNumber(node);
-
       }
-
     });
 
-
-
   document
-
     .querySelectorAll('nav.quarto-page-breadcrumbs .chapter-number')
-
     .forEach((node) => {
-
       const link = node.closest('a');
-
       const href = link ? link.getAttribute('href') : pathname;
-
       if (isFrontMatterHref(href)) {
-
         clearNumber(node);
-
       } else {
-
         applyNumber(node);
-
       }
-
     });
 
-
-
   document
-
     .querySelectorAll("main .header-section-number")
-
     .forEach((node) => {
-
       if (isFrontMatterHref(pathname)) {
-
         const section = node.closest("section");
-
         if (section && section.matches(".level1:first-of-type, .level2:first-of-type")) {
-
           clearNumber(node);
-
           return;
-
         }
-
       }
-
       applyNumber(node);
-
     });
 
-
-
   document
-
     .querySelectorAll("main [data-number]")
-
     .forEach(updateDataNumber);
 
-
-
   document
-
     .querySelectorAll("#TOC .header-section-number")
-
     .forEach((node) => {
-
       const link = node.closest("a");
-
       const href = link ? link.getAttribute("href") : "";
-
       if (isFrontMatterHref(href)) {
-
         clearNumber(node);
-
       } else {
-
         applyNumber(node);
-
       }
-
     });
 
-
-
   document
-
     .querySelectorAll("#TOC [data-number]")
-
     .forEach(updateDataNumber);
-
-
 
   document
-
     .querySelectorAll('#TOC a[data-scroll-target][data-number]')
-
     .forEach(updateDataNumber);
-
-
 
   const expandMarginToc = () => {
-
     const toc = document.getElementById("TOC");
-
     if (!toc) return;
-
     toc.querySelectorAll("ul.collapse").forEach((node) => {
-
       node.classList.remove("collapse");
-
       node.classList.add("toc-expanded");
-
     });
-
     toc.querySelectorAll("[data-bs-toggle='collapse']").forEach((trigger) => {
-
       trigger.removeAttribute("data-bs-toggle");
-
       trigger.setAttribute("aria-expanded", "true");
-
     });
-
   };
 
-
-
   expandMarginToc();
-
 });
-
 </script>
-
 <style>
-
 .sidebar .chapter-number {
-
   display: inline-block;
-
   min-width: 1ch;
-
   margin-right: 0.1ch;
-
   text-align: right;
-
   font-variant-numeric: tabular-nums;
-
 }
-
 .chapter-number--hidden {
-
   visibility: hidden !important;
-
   display: none !important;
-
 }
-
 .toc-expanded {
-
   display: block !important;
-
   visibility: visible !important;
-
   height: auto !important;
-
   overflow: visible !important;
-
 }
-
 </style>
 
-
-
 <script>
-
 document.addEventListener('DOMContentLoaded', function () {
-
   const codeSelectors = [
-
     '.cell > .code-copy-outer-scaffold',
-
     '.cell > .sourceCode',
-
     'pre.sourceCode',
-
     'div.sourceCode'
-
   ];
 
-
-
   const LABEL_SHOW = 'Mostrar el codigo';
-
   const LABEL_HIDE = 'Ocultar el codigo';
-
   const LABEL_EMPTY = 'Sin fragmentos de codigo';
-
   const ICON_SHOW = 'bi bi-code';
-
   const ICON_HIDE = 'bi bi-code-slash';
 
-
-
   const toolsContainer = document.querySelector('.sidebar-tools-main');
-
   let buttonHost = toolsContainer;
-
   let floatingContainer = null;
 
-
-
   if (!buttonHost) {
-
     floatingContainer = document.createElement('div');
-
     floatingContainer.className = 'global-code-toggle-container';
-
     document.body.appendChild(floatingContainer);
-
     buttonHost = floatingContainer;
-
   }
-
-
 
   const repoLink = toolsContainer ? toolsContainer.querySelector('a[href*="github.com"]') : null;
-
   if (repoLink) {
-
     repoLink.title = 'Repositorio';
-
     repoLink.setAttribute('aria-label', 'Repositorio');
-
   }
-
-
 
   const button = document.createElement('a');
-
   button.href = '#';
-
   button.className = 'quarto-navigation-tool px-1 global-code-toggle';
-
   button.setAttribute('role', 'button');
 
-
-
   if (!toolsContainer) {
-
     button.classList.add('global-code-toggle-floating');
-
   }
-
-
 
   const icon = document.createElement('i');
-
   icon.className = ICON_HIDE;
-
   button.appendChild(icon);
 
-
-
   const pdfLink = toolsContainer ? toolsContainer.querySelector('a[href$=".pdf"]') : null;
-
   if (pdfLink && buttonHost === toolsContainer) {
-
     buttonHost.insertBefore(button, pdfLink);
-
   } else {
-
     buttonHost.appendChild(button);
-
   }
 
-
-
   const pageHasCode = codeSelectors.some(function (selector) {
-
     return document.querySelector(selector);
-
   });
-
-
 
   let showingCode = true;
 
-
-
   const setIcon = function (iconClass) {
-
     icon.className = iconClass;
-
   };
-
-
 
   const disableButton = function () {
-
     button.classList.add('global-code-toggle-disabled');
-
     button.classList.add('disabled');
-
     button.setAttribute('aria-disabled', 'true');
-
     button.setAttribute('aria-pressed', 'false');
-
     button.setAttribute('aria-label', LABEL_EMPTY);
-
     button.title = LABEL_EMPTY;
-
     button.tabIndex = -1;
-
     setIcon(ICON_SHOW);
-
   };
-
-
 
   const enableButton = function () {
-
     button.classList.remove('global-code-toggle-disabled');
-
     button.classList.remove('disabled');
-
     button.removeAttribute('aria-disabled');
-
     button.tabIndex = 0;
-
   };
 
-
-
   const update = function () {
-
     if (!pageHasCode) {
-
       disableButton();
-
       document.body.classList.remove('global-code-hidden');
-
       return;
-
     }
-
-
 
     enableButton();
 
-
-
     if (showingCode) {
-
       document.body.classList.remove('global-code-hidden');
-
       button.setAttribute('aria-pressed', 'false');
-
       button.setAttribute('aria-label', LABEL_HIDE);
-
       button.title = LABEL_HIDE;
-
       setIcon(ICON_HIDE);
-
     } else {
-
       document.body.classList.add('global-code-hidden');
-
       button.setAttribute('aria-pressed', 'true');
-
       button.setAttribute('aria-label', LABEL_SHOW);
-
       button.title = LABEL_SHOW;
-
       setIcon(ICON_SHOW);
-
     }
-
   };
-
-
 
   button.addEventListener('click', function (event) {
-
     event.preventDefault();
 
-
-
     if (!pageHasCode) {
-
       return;
-
     }
-
-
 
     showingCode = !showingCode;
-
     update();
-
   });
-
-
 
   button.addEventListener('keydown', function (event) {
-
     if (event.key === ' ' || event.key === 'Spacebar') {
-
       event.preventDefault();
-
       button.click();
-
     }
-
   });
-
-
 
   update();
-
 });
-
 </script>
-
 <style>
-
 body.global-code-hidden .cell > .code-copy-outer-scaffold,
-
 body.global-code-hidden .cell > .sourceCode,
-
 body.global-code-hidden pre.sourceCode,
-
 body.global-code-hidden div.sourceCode {
-
   display: none;
-
 }
-
-
 
 .global-code-toggle {
-
   text-decoration: none;
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   cursor: pointer;
-
 }
-
-
 
 .global-code-toggle i {
-
   font-size: 1.05rem;
-
 }
-
-
 
 .global-code-toggle-disabled {
-
   opacity: 0.6;
-
   cursor: default;
-
   pointer-events: none;
-
 }
-
-
 
 .global-code-toggle-container {
-
   position: fixed;
-
   right: 1.5rem;
-
   bottom: 1.5rem;
-
   z-index: 1030;
-
 }
-
-
 
 .global-code-toggle-floating {
-
   background-color: var(--bs-body-bg, #ffffff);
-
   border-radius: 0.375rem;
-
   padding: 0.4rem 0.55rem;
-
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
-
 }
-
-
 
 .global-code-toggle-floating i {
-
   font-size: 1.15rem;
-
 }
-
-
 
 @media (max-width: 768px) {
-
   .global-code-toggle-container {
-
     right: 1rem;
-
     bottom: 1rem;
-
   }
-
 }
-
 </style>
-
 <script>
-
 document.addEventListener("DOMContentLoaded", () => {
-
   const toc = document.querySelector("nav#TOC, nav.toc-active");
-
   if (!toc) {
-
     return;
-
   }
-
-
 
   const tocLinks = toc.querySelectorAll("a.nav-link[data-scroll-target]");
-
   if (!tocLinks.length) {
-
     return;
-
   }
 
-
-
   const sections = Array.from(tocLinks)
-
     .map((link) => {
-
       const target = document.querySelector(link.getAttribute("data-scroll-target"));
-
       return target ? { link, target, top: 0 } : null;
-
     })
-
     .filter(Boolean);
 
-
-
   const updateOffsets = () => {
-
     sections.forEach((section) => {
-
       section.top = section.target.getBoundingClientRect().top + window.scrollY;
-
     });
-
   };
-
-
 
   const activateLink = (targetLink) => {
-
     tocLinks.forEach((link) => link.classList.remove("active"));
-
     if (targetLink) {
-
       targetLink.classList.add("active");
-
     }
-
   };
-
-
 
   const OFFSET = 140;
-
   let ticking = false;
 
-
-
   const updateActiveSection = () => {
-
     const scrollPosition = window.scrollY + OFFSET;
-
     let current = sections[0];
 
-
-
     for (const section of sections) {
-
       if (section.top <= scrollPosition) {
-
         current = section;
-
       } else {
-
         break;
-
       }
-
     }
-
-
 
     activateLink(current ? current.link : null);
-
     ticking = false;
-
   };
-
-
 
   const onScroll = () => {
-
     if (!ticking) {
-
       window.requestAnimationFrame(updateActiveSection);
-
       ticking = true;
-
     }
-
   };
 
-
-
   updateOffsets();
-
   updateActiveSection();
 
-
-
   window.addEventListener("scroll", onScroll, { passive: true });
-
   window.addEventListener("resize", () => {
-
     updateOffsets();
-
     updateActiveSection();
-
   });
-
-
 
   window.addEventListener("hashchange", () => {
-
     const hash = window.location.hash;
-
     const match = sections.find((section) => section.link.getAttribute("data-scroll-target") === hash);
-
     if (match) {
-
       activateLink(match.link);
-
     }
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -2239,7 +1549,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datos</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades (INE, 2025), y se llevó a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones (INE, 2025).</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades, llevada a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones <span class="co">[</span><span class="ot">@__a</span><span class="co">]</span>.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Muestra</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
@@ -2247,25 +1557,31 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Variables</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Se seleccionaron dos variables de caracterización sociodemográfica: en primer lugar, la variable “edad”, la cual es continua y fue recodificada filtrando solo los casos de personas de 60 años o más, quedando como una variable con respuestas desde 60 años a 105 años. En segundo lugar la variable “sexo”, la cual es una variable dicotómica con posibilidades de respuesta: 1) hombre y 2) mujer.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variables de caracterización sociodemográfica</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Se creó la variable “Tiempo total de trabajo no remunerado en un día tipo”, reuniendo las variables “ Tiempo de trabajo cuidados no remunerado día tipo”, “Tiempo de trabajo doméstico no remunerado para el propio hogar día tipo” y “Tiempo de trabajo voluntario y ayudas a otros hogares día tipo”, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 36,18 horas (expresadas en decimales), pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 23,4 horas.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Para medir el bienestar objetivo se creó la variable “Tiempo dedicado al autocuidado y bienestar en un día tipo” que reúne las variables “Tiempo en cuidados personales y actividades fisiológicas” y “Tiempo en vida social, ocio y medios de comunicación masiva”, que también corresponde a una ponderación de las horas dedicadas a estas actividades en los días de semana y de fin de semana, resultando en las horas dedicadas en un día promedio. La variable final quedó con valores que van desde las 0 horas a las 46,71 horas, y como nuevamente se superaban las 24 horas, estos valores fuera de rango se eliminaron, quedando el máximo en 24. Para medir la “Satisfacción con la vida”, se usó una variable categórica tipo Likert, del módulo de Bienestar Subjetivo, donde se preguntaba por satisfacción con “Su vida en general”, cuyas posibilidades de respuesta iban del 1 al 5, donde 1 corresponde “totalmente insatisfecho(a)” y 5 a “totalmente satisfecho(a)”.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Por último, se creó una escala de “Bienestar subjetivo de cuidadores” a partir de ocho variables tipo Likert, que evalúan percepciones de sobrecarga en dos grupos: cinco variables dirigidas a cuidadores de personas con dependencia funcional y tres dirigidas a cuidadores de niños, niñas y adolescentes (NNA). Las categorías de las variables dirigidas al último grupo fueron recodificadas para estar en el mismo sentido que las demás, yendo del 1 al 5, donde 1 es siempre y 5 es nunca. Esto resultó en una escala con valores del 1 al 5, donde 1 corresponde a un menor bienestar subjetivo y 5 a un mayor bienestar subjetivo.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Edad**: Variable continua, recodificada para filtrar solo los casos de personas de 60 años o más, con valores desde 60 a 105 años.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Sexo**: Variable dicotómica con posibilidades de respuesta: 1) hombre y 2) mujer.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variables de interés</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Tiempo total de trabajo no remunerado en un día tipo**: Variable que mide la cantidad de horas dedicadas a trabajo no remunerado en un día promedio. Formada por la suma de las variables <span class="in">`Tiempo total de trabajo no remunerado en un día tipo`</span>, <span class="in">`Tiempo de trabajo doméstico no remunerado para el propio hogar día tipo`</span> y <span class="in">`Tiempo de trabajo voluntario y ayudas a otros hogares día tipo`</span>, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 36,18 horas (expresadas en decimales), pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 23,4 horas.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estrategia de análisis</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Tiempo dedicado al autocuidado y bienestar en un día tipo**: Variable que mide la cantidad de horas dedicadas a autocuidado y bienestar en un día promedio. Formada por la suma de las variables <span class="in">`Tiempo en cuidados personales y actividades fisiológicas`</span> y <span class="in">`Tiempo en vida social, ocio y medios de comunicación masiva`</span>, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 46,71 horas, pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 24 horas.</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Para el análisis, en primer lugar se realizó un análisis univariado de las variables seleccionadas, calculando medidas de dispersión para las variables cuantitativas y medidas de frecuencia para las variables categóricas.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Satisfacción con la vida**: Variable creada a partir de una variable categórica tipo Likert, del módulo de Bienestar Subjetivo, donde se preguntaba por satisfacción con “Su vida en general”, cuyas posibilidades de respuesta iban del 1 al 5, donde 1 corresponde “totalmente insatisfecho(a)” y 5 a “totalmente satisfecho(a)”.</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Para evaluar la hipótesis 1, se calculó el coeficiente de correlación de Pearson entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Tiempo dedicado a autocuidado y bienestar en un día tipo”, para evaluar si existe una correlación estadísticamente significativa entre las variables y si su asociación es negativa.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Bienestar subjetivo de cuidadores**: Variable creada a partir de ocho variables tipo Likert, que evalúan percepciones de sobrecarga en dos grupos: cinco variables dirigidas a cuidadores de personas con dependencia funcional y tres dirigidas a cuidadores de niños, niñas y adolescentes (NNA). Las categorías de las variables dirigidas al último grupo fueron recodificadas para estar en el mismo sentido que las demás, yendo del 1 al 5, donde 1 es siempre y 5 es nunca. Esto resultó en una escala con valores del 1 al 5, donde 1 corresponde a un menor bienestar subjetivo y 5 a un mayor bienestar subjetivo.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Para evaluar la hipótesis 2, se calculó el coeficiente de correlación de Pearson entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Bienestar subjetivo de cuidadores”, para evaluar si la asociación entre estas variables es negativa y si es estadísticamente significativa.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estrategia de análisis</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Para evaluar la hipótesis 3, se calculó el coeficiente de correlación de Spearman entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Satisfacción con la vida”, para evaluar si la relación entre estas variables es negativa y si es estadísticamente significativa.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Para el análisis, en primer lugar se realizó un análisis univariado de las variables seleccionadas, calculando medidas de dispersión para las variables cuantitativas y medidas de frecuencia para las variables categóricas.</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Los análisis estadísticos para contraste de hipótesis y análisis descriptivos se realizaron en el software R.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Para evaluar la hipótesis 1, se calculó el coeficiente de correlación de Pearson entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Tiempo dedicado a autocuidado y bienestar en un día tipo”, para evaluar si existe una correlación estadísticamente significativa entre las variables y si su asociación es negativa.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Para evaluar la hipótesis 2, se calculó el coeficiente de correlación de Pearson entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Bienestar subjetivo de cuidadores”, para evaluar si la asociación entre estas variables es negativa y si es estadísticamente significativa.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Para evaluar la hipótesis 3, se calculó el coeficiente de correlación de Spearman entre las variables “Tiempo total de trabajo no remunerado en un día tipo” y “Satisfacción con la vida”, para evaluar si la relación entre estas variables es negativa y si es estadísticamente significativa.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Los análisis estadísticos para contraste de hipótesis y análisis descriptivos se realizaron en el software R.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
