@@ -62,7 +62,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -324,13 +344,19 @@ p {
 nav#TOC { display: none !important; }
 div[data-when-format="pdf"] { display: none !important; }
 </style>
-<p><span class="keywords-line"><strong>Palabras clave:</strong> Ciencia Social Abierta</span></p>
+<p><span class="keywords-line"><strong>Palabras clave:</strong> Cuidados, Adultos Mayores, Envejecimiento </span></p>
 <section id="abstract" class="level1 unnumbered">
 <h1 class="unnumbered">Abstract</h1>
+<p>En Chile, el envejecimiento poblacional está transformando la composición familiar y generando una inversión de la pirámide poblacional. Este proceso plantea importantes desafíos para las políticas públicas, especialmente las orientadas a la vejez. Una de estas problemáticas es que, los adultos mayores son uno de los grupos de personas a los que históricamente han estado dirigidos los cuidados, muchas de las labores de este tipo que se desarrollan dentro de una familia han debido ser tomadas por otros adultos mayores. Es decir, los adultos mayores cuidadores, especialmente las mujeres, además de cuidar directamente a otros adultos mayores, también deben cuidar de niños (Bragato et al., 2022), y personas en situación de dependencia funcional <span class="citation" data-cites="tartaglini_trastornos_2012">(<a href="references.html#ref-tartaglini_trastornos_2012" role="doc-biblioref">Tartaglini &amp; Stefani, 2012</a>)</span>. Por estos motivos, la investigación tiene por objetivo analizar la relación entre la carga de trabajo de cuidados realizados por adultos mayores, con su bienestar objetivo, su bienestar subjetivo y la satisfacción con la vida a partir de la ENUT 2023.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-tartaglini_trastornos_2012" class="csl-entry" role="listitem">
+Tartaglini, M. F., &amp; Stefani, D. (2012). Trastornos Psicofisiológicos En Adultos Mayores Cuidadores Familiares de Enfermos Crónicos. <span>Una</span> Revisión. <em>Boletín de psicología</em>, <em>16</em>, 65-79.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1532,7 +1558,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>\small\textbf{Palabras clave:} Ciencia Social Abierta</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>\small\textbf{Palabras clave:} Cuidados, Adultos Mayores, Envejecimiento</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>\normalsize</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -1541,10 +1567,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>nav<span class="pp">#TOC</span> { <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span> }</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>div<span class="ex">[</span><span class="ss">data-when-format</span><span class="op">=</span><span class="st">"pdf"</span><span class="ex">]</span> { <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span> }</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"keywords-line"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Palabras clave:<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> Ciencia Social Abierta<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"keywords-line"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Palabras clave:<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> Cuidados, Adultos Mayores, Envejecimiento <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># Abstract {.unnumbered}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># Abstract {.unnumbered}</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>En Chile, el envejecimiento poblacional está transformando la composición familiar y generando una inversión de la pirámide poblacional. Este proceso plantea importantes desafíos para las políticas públicas, especialmente las orientadas a la vejez. Una de estas problemáticas es que, los adultos mayores son uno de los grupos de personas a los que históricamente han estado dirigidos los cuidados, muchas de las labores de este tipo que se desarrollan dentro de una familia han debido ser tomadas por otros adultos mayores. Es decir, los adultos mayores cuidadores, especialmente las mujeres, además de cuidar directamente a otros adultos mayores, también deben cuidar de niños (Bragato et al., 2022), y personas en situación de dependencia funcional <span class="co">[</span><span class="ot">@tartaglini_trastornos_2012</span><span class="co">]</span>. Por estos motivos, la investigación tiene por objetivo analizar la relación entre la carga de trabajo de cuidados realizados por adultos mayores, con su bienestar objetivo, su bienestar subjetivo y la satisfacción con la vida a partir de la ENUT 2023.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
