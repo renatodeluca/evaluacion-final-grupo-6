@@ -44,7 +44,7 @@ book:
     - index.qmd            # Capitulo inicial o resumen ejecutivo
     - 01-introduccion.qmd
     - 02-antecedentes.qmd
-    - 03-conceptos centrales.qmd
+    - 03-conceptos-centrales.qmd
     - 04-hipotesis.qmd
     - 05-metodos.qmd
     - 06-resultados.qmd
