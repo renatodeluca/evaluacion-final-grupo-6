@@ -21,7 +21,7 @@ if (!require(calidad)) install.packages('calidad'); library(calidad)
 options(scipen = 999)
 rm(list = ls())
 
-enut2023 <- readRDS("input/250117-ii-enut-bdd-r.rds")
+enut2023 <- readRDS("input/data-orig/250117-ii-enut-bdd-r.RDS")
 
 # 1. FIltrar y seleccionar variables -------------------------------------------
 ## a Selección de variables de interés ---------------------------------------
