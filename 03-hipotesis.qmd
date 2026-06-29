@@ -1,7 +1,7 @@
 ﻿---
 title: "Hipótesis"
 ---
-Las hipotesis se encuentran pre-registradas en el repositorio de la [OSF](https://osf.io/), en este [enlace](https://osf.io/4xjye/). Sin embargo, esta investigación no se encuentra preprinteada, producto de que la elaboración de esta investigación se realizó por otras personas, por tanto realizar un preprint de esta investigación no es posible. No obstante, se puede acceder a la pre-registración de las hipótesis en el enlace previamente mencionado. 
+Las hipotesis se encuentran pre-registradas en el repositorio de la [OSF](https://osf.io/), en este [enlace](https://osf.io/4xjye/). Sin embargo, esta investigación no se encuentra preprinteada, producto de que la totalidad de esta investigación se realizó por otras personas, por tanto realizar un preprint de esta investigación no es posible. No obstante, se puede acceder al pre-registro de las hipótesis en el enlace previamente mencionado. 
 
 Para determinar asociaciones entre variables se plantearon las siguientes hipótesis:
 
