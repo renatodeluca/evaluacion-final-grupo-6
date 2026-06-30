@@ -2,7 +2,8 @@
 title: "Métodos"
 ---
 
-Datos y protocolo de investigación
+## Protocolo de investigación
+
 
 ## Datos
 
