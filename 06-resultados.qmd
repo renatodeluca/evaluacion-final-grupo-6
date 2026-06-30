@@ -46,3 +46,11 @@ Matrices de correlación de Spearman segregadas según sexo de los cuidadores.
 :::
 
 Entonces, de las hipótesis anteriormente señaladas, no sería posible demostrar evidencia a favor de la primera hipótesis de que hay una asociación negativa entre la carga del trabajo de cuidados no remunerado y el bienestar objetivo de adultos mayores, pero sí existe cuando se filtra por aquellos que son específicamente cuidadores. Pero sí es posible encontrar evidencia a favor de la segunda y tercera hipótesis, porque hay una asociación negativa entre la carga del trabajo de cuidados no remunerado y el bienestar subjetivo de adultos mayores cuidadores, y también una asociación negativa entre la carga del trabajo de cuidados no remunerado y la satisfacción con la vida de adultos mayores.
+
+## Limitaciones
+
+
+
+
+
+## Aportes
