@@ -147,4 +147,4 @@ rownames(M) <- c("Horas de trabajo no remunerado",
                  "Bienestar subjetivo")
 colnames(M) <- rownames(M) 
 
-saveRDS(data, file = "output/data_enut_limpia.rds")
+saveRDS(data, file = "input/data-proc.rds")

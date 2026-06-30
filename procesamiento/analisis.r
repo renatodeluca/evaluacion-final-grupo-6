@@ -21,7 +21,7 @@ options(scipen = 999)
 rm(list = ls())
 
 
-data <- readRDS("output/data_enut_limpia.rds")
+data <- readRDS("input/data-proc.rds")
 
 selected_vars <- data %>%  
   select(t_nr, cpaf, escala_bsc)
@@ -109,3 +109,4 @@ corrplot::corrplot(M_hombres,
                    col = colorRampPalette(c("#a118f3", "white",  "#ff0cae"))(12),
                    bg = "white",
                    na.label = "-")
+
