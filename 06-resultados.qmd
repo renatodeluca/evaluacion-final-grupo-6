@@ -2,6 +2,11 @@
 title: "Resultados"
 ---
 Interpreta resultados, limitaciones y aportes.
+
+Para el análisis de los resultados, se cargan los paquetes `tidyverse`, `sjmisc`, `knitr`, `kableExtra`, `sjPlot`, `stargazer`, `janitor`, `crosstable`, `table1`, `haven`, `psych`, `car`, `summarytools`, `ggplot2`, `dplyr`, `hrbrthemes` y `corrplot`.
+
+Se carga la base de datos procesada, la cual contiene diversas variables de interés para el análisis, proceso especificado en la sección de métodos. Sin embargo, la base de datos cruda, que contiene todas las observaciones de la ENUT 2023, se encuentra en la ruta `input/data-/orig/250117-ii-enut-bbd-r.RDS`, o entrando en este [enlace](https://www.ine.gob.cl/estadisticas-por-tema/mercado-laboral/uso-del-tiempo-trabajo-no-remunerado) mientras que la base de datos procesada, que contiene sólo las observaciones de adultos mayores y las variables de interés, se encuentra en el archivo `input/data-proc/data-proc.rds`.
+
 ```{r}
 #| results: false
 #| message: false
@@ -23,7 +28,7 @@ pacman::p_load(tidyverse,
  summarytools,
  ggplot2,
  dplyr,
- hrbrthemes)
+ hrbrthemes,corrplot)
 
 if (!require(survey)) install.packages('survey'); library(survey)
 if (!require(calidad)) install.packages('calidad'); library(calidad)
