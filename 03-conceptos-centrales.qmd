@@ -2,11 +2,7 @@
 title: "Conceptos Centrales"
 ---
 
-Esta investigación se centra en cuatro conceptos principales: bienestar subjetivo, bienestar
-objetivo, satisfacción con la vida y carga de trabajo de cuidados no remunerados. Estos
-conceptos son fundamentales para poder responder a la pregunta de investigación y así analizar
-la relación entre la carga de trabajo de cuidados realizados por adultos mayores con su bienestar
-objetivo, su bienestar subjetivo y su satisfacción con la vida.
+Esta investigación se centra en cuatro conceptos principales: bienestar subjetivo, bienestar objetivo, satisfacción con la vida y carga de trabajo de cuidados no remunerados. Estos conceptos son fundamentales para poder responder a la pregunta de investigación y así analizar la relación entre la carga de trabajo de cuidados realizados por adultos mayores con su bienestar objetivo, su bienestar subjetivo y su satisfacción con la vida.
 
 En primera instancia, el bienestar subjetivo se comprende como la evaluación global de la vida, que según el psicólogo estadounidense @diener_subjective_1984 se caracteriza según tres medidas distintivas. En primer lugar, es subjetivo, en tanto reside en la experiencia personal del individuo. En segundo lugar, incluye medidas positivas (no solo la ausencia de factores negativos). Y en tercer lugar, incluye una evaluación global de todos los aspectos de la vida de una persona.
 
@@ -16,58 +12,19 @@ Wilson [1967, en @diener_subjective_1984] propone que quienes tienen más ventaj
 
 Respecto a la edad en particular, la literatura presenta hallazgos mixtos y a veces contradictorios sobre su relación con la felicidad (comprendida como dimensión del bienestar subjetivo). Aunque algunos estudios sugieren que las personas jóvenes son más felices que las personas de edad avanzada [Bradburn y Caplovitz, 1965; Gurin, Veroff y Feld, 1960; Kuhlen, 1948; Wessman, 1957; Wilson, 1967, en @diener_subjective_1984], estudios más recientes han concluido que no hay efectos significativos de la edad sobre el bienestar subjetivo [Alston et al., 1974; Andrews y Withey, 1976; Cameron, 1975; Sauer, 1977; Spreitzer y Snyder, 1974, en @diener_subjective_1984]. Algunos estudios incluso han encontrado una correlación positiva entre la edad y la satisfacción [Bortner y Hultsch, 1970; Cantril, 1965; Clemente y Sauer, 1976a; Medley, 1980, en @diener_subjective_1984]. Otros han observado que los jóvenes reportan niveles más altos tanto de afecto positivo como negativo, lo que indicaría que, en general, experimentan emociones de forma más intensa [Braun, 1977, en @diener_subjective_1984].
 
-En las definiciones de bienestar subjetivo hay ausencia de aquellas sobre condiciones objetivas
-como la salud, el confort, la virtud o la riqueza, que son vistas más bien como factores
-influyentes. Además, cada persona experimenta el placer de distintas maneras, por lo que es
-importante evaluar cuáles son estas.
+En las definiciones de bienestar subjetivo hay ausencia de aquellas sobre condiciones objetivascomo la salud, el confort, la virtud o la riqueza, que son vistas más bien como factores influyentes. Además, cada persona experimenta el placer de distintas maneras, por lo que es importante evaluar cuáles son estas.
 
-El bienestar objetivo se identifica con la idea de universalidad, y puede estar asociado a que
-existen ciertos requerimientos comunes a todo ser humano, como
-condiciones materiales, de salud y sociales. Debido a que hay estándares objetivos de la buena
-vida, estos pueden ser evaluados de forma observable y medible. Para esto existen herramientas
-como el Índice de Desarrollo Humano (IDH), reconocido a nivel internacional, y el Índice para
-una Vida Mejor [@organisationforeconomicco-operationanddevelopment_better_] de la OCDE. Ambos miden, además de condiciones
-subjetivas, dimensiones objetivas del bienestar como el acceso a vivienda, ingresos, empleo,
-comunidad, salud, seguridad y equilibrio entre la vida laboral y personal.
+El bienestar objetivo se identifica con la idea de universalidad, y puede estar asociado a que existen ciertos requerimientos comunes a todo ser humano, como condiciones materiales, de salud y sociales. Debido a que hay estándares objetivos de la buena vida, estos pueden ser evaluados de forma observable y medible. Para esto existen herramientas como el Índice de Desarrollo Humano (IDH), reconocido a nivel internacional, y el Índice para una Vida Mejor [@organisationforeconomicco-operationanddevelopment_better_] de la OCDE. Ambos miden, además de condiciones subjetivas, dimensiones objetivas del bienestar como el acceso a vivienda, ingresos, empleo, comunidad, salud, seguridad y equilibrio entre la vida laboral y personal.
 
-Si bien se habla a grandes rasgos sobre la satisfacción con la vida como una de las dimensiones
-del bienestar subjetivo, resulta relevante para esta investigación tratar este concepto con más
-énfasis. Esto, ya que se considera que el bienestar subjetivo puede depender de la tendencia a
-sentir emociones positivas en un periodo acotado. En cambio, la satisfacción con la vida se
-entiende como una evaluación cognitiva más estable de la calidad de las experiencias [@arita_indicadores_2005], que depende de condiciones contextuales y psicosociales de la persona.
+Si bien se habla a grandes rasgos sobre la satisfacción con la vida como una de las dimensiones del bienestar subjetivo, resulta relevante para esta investigación tratar este concepto con más énfasis. Esto, ya que se considera que el bienestar subjetivo puede depender de la tendencia a sentir emociones positivas en un periodo acotado. En cambio, la satisfacción con la vida se entiende como una evaluación cognitiva más estable de la calidad de las experiencias [@arita_indicadores_2005], que depende de condiciones contextuales y psicosociales de la persona.
 
-Ruut Veenhoven, sociólogo neerlandés, define la satisfacción con la vida como el grado en que
-una persona evalúa positivamente su vida en su conjunto, es decir, cómo la gente juzga su propia
-vida basándose en sus propias normas y expectativas [@veenhoven_happiness_2012]. Es decir, cuenta con los
-estándares del informante para determinar qué es una buena vida.
+Ruut Veenhoven, sociólogo neerlandés, define la satisfacción con la vida como el grado en que una persona evalúa positivamente su vida en su conjunto, es decir, cómo la gente juzga su propia vida basándose en sus propias normas y expectativas [@veenhoven_happiness_2012]. Es decir, cuenta con los estándares del informante para determinar qué es una buena vida.
 
-Este concepto es relevante, ya que la literatura sobre cuidados muestra que muchas veces ni
-siquiera las personas que realizan estos trabajos reconocen su labor [@torns_trabajo_2008], y el no
-reconocimiento puede afectar su bienestar general dado a que tiene repercusiones a nivel de
-salud física y mental, económicas, en sus actividades de ocio, y relaciones sociales, personales y
-laborales (Ramirez, 2018; Sanhueza-Parra, 2022). Por lo tanto, la satisfacción con la vida
-aparece como un indicador importante de progreso social, especialmente en el caso de adultos
-mayores que realizan trabajos de cuidados [@veenhoven_happiness_2012].
+Este concepto es relevante, ya que la literatura sobre cuidados muestra que muchas veces ni siquiera las personas que realizan estos trabajos reconocen su labor [@torns_trabajo_2008], y el no reconocimiento puede afectar su bienestar general dado a que tiene repercusiones a nivel de salud física y mental, económicas, en sus actividades de ocio, y relaciones sociales, personales y laborales (@ramirezpereira_mayores_2018; @sanhueza-parra_adultos_2022). Por lo tanto, la satisfacción con la vida aparece como un indicador importante de progreso social, especialmente en el caso de adultos mayores que realizan trabajos de cuidados [@veenhoven_happiness_2012].
 
 
-Por otro lado, la carga de trabajo de cuidados no remunerados refiere al tiempo total dedicado en
-los hogares a tareas de cuidado sin recibir compensación económica [@banchero_personas_2017]. Por su
-parte, el trabajo de cuidados incluye la producción de bienes y servicios de manera no
-remunerada destinada al mantenimiento y reproducción de los hogares, y a la satisfacción de
-necesidades físicas y emocionales de personas que requieren ayuda para realizar actividades de
-la vida diaria por haber perdido su autonomía (como niños, personas con discapacidad o adultos
-mayores).
+Por otro lado, la carga de trabajo de cuidados no remunerados refiere al tiempo total dedicado en los hogares a tareas de cuidado sin recibir compensación económica [@banchero_personas_2017]. Por su parte, el trabajo de cuidados incluye la producción de bienes y servicios de manera no remunerada destinada al mantenimiento y reproducción de los hogares, y a la satisfacción de necesidades físicas y emocionales de personas que requieren ayuda para realizar actividades de la vida diaria por haber perdido su autonomía (como niños, personas con discapacidad o adultos mayores).
 
-Según la literatura, este trabajo es fundamental para el bienestar de las personas, pero no suele
-ser reconocido como tal, incluso por quienes lo realizan. Esto tiene efectos directos en la salud
-mental y física de las personas cuidadoras, además de provocar efectos como la sobrecarga [@ramirezpereira_mayores_2018].
+Según la literatura, este trabajo es fundamental para el bienestar de las personas, pero no suele ser reconocido como tal, incluso por quienes lo realizan. Esto tiene efectos directos en la salud mental y física de las personas cuidadoras, además de provocar efectos como la sobrecarga [@ramirezpereira_mayores_2018].
 
-En conjunto, los conceptos desarrollados permiten comprender cómo la carga de trabajo de
-cuidados no remunerados puede afectar diversas dimensiones del bienestar en adultos mayores.
-Mientras que el bienestar subjetivo y la satisfacción con la vida capturan cómo las personas
-evalúan su existencia desde una perspectiva emocional y cognitiva, el bienestar objetivo
-incorpora condiciones materiales que también influyen en esa percepción. Así, esta investigación
-busca analizar cómo la realización de tareas de cuidado, muchas veces invisibilizadas y no
-reconocidas, se relaciona con el bienestar general de quienes las realizan, considerando tanto
-factores internos como externos. Este marco conceptual permite fundamentar la pregunta de
-investigación y orientar la medición empírica de las variables implicadas.
+En conjunto, los conceptos desarrollados permiten comprender cómo la carga de trabajo de cuidados no remunerados puede afectar diversas dimensiones del bienestar en adultos mayores. Mientras que el bienestar subjetivo y la satisfacción con la vida capturan cómo las personas evalúan su existencia desde una perspectiva emocional y cognitiva, el bienestar objetivo incorpora condiciones materiales que también influyen en esa percepción. Así, esta investigación busca analizar cómo la realización de tareas de cuidado, muchas veces invisibilizadas y no reconocidas, se relaciona con el bienestar general de quienes las realizan, considerando tanto factores internos como externos. Este marco conceptual permite fundamentar la pregunta de investigación y orientar la medición empírica de las variables implicadas.
