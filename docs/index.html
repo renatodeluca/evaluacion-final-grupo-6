@@ -143,6 +143,35 @@ p {
 }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="assets/styles.scss">
 </head>
@@ -334,7 +363,7 @@ p {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">29 de junio de 2026</p>
+      <p class="date">30 de junio de 2026</p>
     </div>
   </div>
   
@@ -353,12 +382,12 @@ div[data-when-format="pdf"] { display: none !important; }
 <p><span class="keywords-line"><strong>Palabras clave:</strong> adultos mayores, trabajo de cuidados no remunerado, bienestar subjetivo, satisfacción con la vida, género, Chile. </span></p>
 <section id="abstract" class="level1 unnumbered">
 <h1 class="unnumbered">Abstract</h1>
-<p>Este estudio analiza la relación entre la carga de trabajo de cuidados no remunerados realizado por adultos mayores (60 años o más) y su bienestar objetivo, bienestar subjetivo y satisfacción con la vida en Chile. Utilizando datos de la II Encuesta Nacional del Uso del Tiempo <span class="citation" data-cites="__a">(<a href="#ref-__a" role="doc-biblioref">Estadisticas, 2025</a>)</span>, con una muestra de 10.099 observaciones, se calcularon correlaciones de Pearson y Spearman para contrastar tres hipótesis de asociación negativa. Los resultados muestran que, si bien en la muestra general existe una correlación positiva entre horas de trabajo no remunerado y bienestar objetivo, al filtrar por cuidadores específicos esta relación se invierte. En cambio, se confirman asociaciones negativas y estadísticamente significativas entre la carga de cuidados y el bienestar subjetivo (r = -0.207, p &lt; 0.01), así como con la satisfacción con la vida (r = -0.070, p &lt; 0.05). La brecha de género es marcada: las mujeres mayores dedican más del doble de horas a estas labores que los hombres y presentan correlaciones más intensas entre carga de cuidados y menor bienestar. Estos hallazgos evidencian la necesidad de visibilizar el trabajo de cuidados en la vejez e incorporar perspectivas de género y envejecimiento en el diseño de políticas públicas.</p>
+<p>Este estudio analiza la relación entre la carga de trabajo de cuidados no remunerados realizado por adultos mayores (60 años o más) y su bienestar objetivo, bienestar subjetivo y satisfacción con la vida en Chile. Utilizando datos de la II Encuesta Nacional del Uso del Tiempo <span class="citation" data-cites="__a">(<a href="references.html#ref-__a" role="doc-biblioref">Estadisticas, 2025</a>)</span>, con una muestra de 10.099 observaciones, se calcularon correlaciones de Pearson y Spearman para contrastar tres hipótesis de asociación negativa. Los resultados muestran que en la muestra general existe una correlación positiva y de intensidad mediana entre horas de trabajo de cuidados no remunerado y bienestar objetivo (<span class="math inline">\(r = 0.467\)</span>, <span class="math inline">\(p &lt; 0.01\)</span>), relación que se vuelve negativa pero no significativa al filtrar por el subgrupo de cuidadores (<span class="math inline">\(r = -0.055\)</span>, <span class="math inline">\(p = 0.09\)</span>). Por otro lado, se confirma una asociación negativa y estadísticamente significativa entre la carga de cuidados y el bienestar subjetivo de los cuidadores (<span class="math inline">\(r = -0.207\)</span>, <span class="math inline">\(p &lt; 0.01\)</span>), así como con la satisfacción con la vida (<span class="math inline">\(r = -0.070\)</span>, <span class="math inline">\(p &lt; 0.05\)</span>). Al segregar por sexo, la brecha de género es marcada: las mujeres mayores asumen una carga que promedia más del doble de tiempo que la de los hombres; además, tanto en mujeres como en hombres cuidadores se ratifican correlaciones negativas y significativas de la carga de cuidados con el bienestar subjetivo (<span class="math inline">\(r = -0.198\)</span> y <span class="math inline">\(r = -0.157\)</span> respectivamente, <span class="math inline">\(p &lt; 0.05\)</span>) y con la satisfacción con la vida (<span class="math inline">\(r = -0.053\)</span> y <span class="math inline">\(r = -0.104\)</span> respectivamente, <span class="math inline">\(p &lt; 0.05\)</span>).</p>
 
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-__a" class="csl-entry" role="listitem">
 Estadisticas, I. N. de. (2025). <em>Informe <span>Principales</span> <span>Resultados</span></em>. INE. <a href="http://www.ine.gob.cl/docs/default-source/uso-del-tiempo-tiempo-libre/publicaciones-y-anuarios/ii-enut/informe-de-principales-resultados-ii-enut-2023.pdf?sfvrsn=ee33c12c_4">http://www.ine.gob.cl/docs/default-source/uso-del-tiempo-tiempo-libre/publicaciones-y-anuarios/ii-enut/informe-de-principales-resultados-ii-enut-2023.pdf?sfvrsn=ee33c12c_4</a>
 </div>
@@ -1578,7 +1607,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># Abstract {.unnumbered}</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Este estudio analiza la relación entre la carga de trabajo de cuidados no remunerados realizado por adultos mayores (60 años o más) y su bienestar objetivo, bienestar subjetivo y satisfacción con la vida en Chile. Utilizando datos de la II Encuesta Nacional del Uso del Tiempo <span class="co">[</span><span class="ot">@__a</span><span class="co">]</span>, con una muestra de 10.099 observaciones, se calcularon correlaciones de Pearson y Spearman para contrastar tres hipótesis de asociación negativa. Los resultados muestran que, si bien en la muestra general existe una correlación positiva entre horas de trabajo no remunerado y bienestar objetivo, al filtrar por cuidadores específicos esta relación se invierte. En cambio, se confirman asociaciones negativas y estadísticamente significativas entre la carga de cuidados y el bienestar subjetivo (r = -0.207, p &lt; 0.01), así como con la satisfacción con la vida (r = -0.070, p &lt; 0.05). La brecha de género es marcada: las mujeres mayores dedican más del doble de horas a estas labores que los hombres y presentan correlaciones más intensas entre carga de cuidados y menor bienestar. Estos hallazgos evidencian la necesidad de visibilizar el trabajo de cuidados en la vejez e incorporar perspectivas de género y envejecimiento en el diseño de políticas públicas.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Este estudio analiza la relación entre la carga de trabajo de cuidados no remunerados realizado por adultos mayores (60 años o más) y su bienestar objetivo, bienestar subjetivo y satisfacción con la vida en Chile. Utilizando datos de la II Encuesta Nacional del Uso del Tiempo <span class="co">[</span><span class="ot">@__a</span><span class="co">]</span>, con una muestra de 10.099 observaciones, se calcularon correlaciones de Pearson y Spearman para contrastar tres hipótesis de asociación negativa. Los resultados muestran que en la muestra general existe una correlación positiva y de intensidad mediana entre horas de trabajo de cuidados no remunerado y bienestar objetivo ($r = 0.467$, $p &lt; 0.01$), relación que se vuelve negativa pero no significativa al filtrar por el subgrupo de cuidadores ($r = -0.055$, $p = 0.09$). Por otro lado, se confirma una asociación negativa y estadísticamente significativa entre la carga de cuidados y el bienestar subjetivo de los cuidadores ($r = -0.207$, $p &lt; 0.01$), así como con la satisfacción con la vida ($r = -0.070$, $p &lt; 0.05$). Al segregar por sexo, la brecha de género es marcada: las mujeres mayores asumen una carga que promedia más del doble de tiempo que la de los hombres; además, tanto en mujeres como en hombres cuidadores se ratifican correlaciones negativas y significativas de la carga de cuidados con el bienestar subjetivo ($r = -0.198$ y $r = -0.157$ respectivamente, $p &lt; 0.05$) y con la satisfacción con la vida ($r = -0.053$ y $r = -0.104$ respectivamente, $p &lt; 0.05$).</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
