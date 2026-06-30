@@ -47,7 +47,7 @@ ggplot(data %>% group_by(sexo) %>% summarise(promedio_tnr = mean(t_nr_horas, na.
 TRUE)),
  aes(x = factor(sexo), y = promedio_tnr, fill = factor(sexo))) +
  geom_col() +
- scale_fill_manual(values = c("#00bfc4", "#ff0cae"),
+ scale_fill_manual(values = c("#8efbff", "#3af8ff"),
  labels = c("Hombres", "Mujeres")) +
  labs(
  title = "Promedio de trabajo no remunerado por sexo (en horas)",
