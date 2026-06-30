@@ -49,8 +49,6 @@ Entonces, de las hipótesis anteriormente señaladas, no sería posible demostra
 
 ## Limitaciones
 
-
-
-
+Algunas limitaciones del estudio se relacionaron con la base de datos, ya que es posible que las variables disponibles no hayan permitido medir de la forma más adecuada los conceptos de bienestar, especialmente el bienestar subjetivo, ya que este era solo para cuidadores, y no se pudo revisar en la muestra completa. Sería interesante para futuras encuestas tener en consideración la medición de bienestar subjetivo para poder llevar a cabo este tipo de análisis de una manera más adecuada.
 
 ## Aportes
