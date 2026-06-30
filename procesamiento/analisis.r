@@ -142,7 +142,7 @@ corrplot::corrplot(M,
  cl.cex = 0.6,
  type = "upper",
  tl.col = "black",
- col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+ col = colorRampPalette(c("#7CDCB1", "white", "#6227E4"))(12),
  bg = "white",
  na.label = "-")
 # filtrar por mujeres cuidadoras----
@@ -173,7 +173,7 @@ corrplot::corrplot(M2,
  cl.cex = 0.6,
  type = "upper",
  tl.col = "black",
- col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+ col = colorRampPalette(c("#7CDCB1", "white", "#6227E4"))(12),
  bg = "white",
  na.label = "-")
 
@@ -210,7 +210,7 @@ corrplot::corrplot(M3,
  cl.cex = 0.6,
  type = "upper",
  tl.col = "black",
- col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+ col = colorRampPalette(c("#7CDCB1", "white", "#6227E4"))(12),
  bg = "white",
  na.label = "-")
 
