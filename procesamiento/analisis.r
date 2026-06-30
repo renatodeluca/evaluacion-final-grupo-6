@@ -47,7 +47,7 @@ ggplot(data %>% group_by(sexo) %>% summarise(promedio_tnr = mean(t_nr_horas, na.
 TRUE)),
  aes(x = factor(sexo), y = promedio_tnr, fill = factor(sexo))) +
  geom_col() +
- scale_fill_manual(values = c("#8efbff", "#3af8ff"),
+ scale_fill_manual(values = c("#6227E4", "#7CDCB1"),
  labels = c("Hombres", "Mujeres")) +
  labs(
  title = "Promedio de trabajo no remunerado por sexo (en horas)",
@@ -62,7 +62,7 @@ ggplot(data %>% group_by(sexo) %>% summarise(promedio_cpaf = mean(cpaf_horas, na
 TRUE)),
  aes(x = factor(sexo), y = promedio_cpaf, fill = factor(sexo))) +
  geom_col() +
- scale_fill_manual(values = c("#00bfc4", "#f8766d"),
+ scale_fill_manual(values = c("#6227E4", "#7CDCB1"),
  labels = c("Hombres", "Mujeres")) +
  labs(
  title = "Promedio de horas dedicadas a bienestar objetivo por sexo",
@@ -75,7 +75,7 @@ ggplot(data %>% group_by(sexo) %>% summarise(promedio_bsc = mean(escala_bsc, na.
 TRUE)),
  aes(x = factor(sexo), y = promedio_bsc, fill = factor(sexo))) +
  geom_col() +
- scale_fill_manual(values = c("#00bfc4", "#f8766d"),
+ scale_fill_manual(values = c("#6227E4", "#7CDCB1"),
  labels = c("Hombres", "Mujeres")) +
  labs(
  title = "Promedio de bienestar subjetivo del cuidador/a por sexo",
