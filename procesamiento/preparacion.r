@@ -51,12 +51,14 @@ data<- data %>%
  mutate(across(starts_with("bs"), ~ifelse(. == 99, NA, .)))
 colSums(is.na(data))
 # recodificar direccion
+
 data <- data %>%
  mutate(bs12 = case_when(
  bs12 == 1 ~ "5",
  bs12 == 2 ~ "4",
  bs12 == 4 ~ "2",
  bs12 == 5 ~ "1"))
+
 data <- data %>%
  mutate(bs13 = case_when(
  bs13 == 1 ~ "5",
@@ -64,47 +66,40 @@ data <- data %>%
 bs13 == 4 ~ "2",
 bs13 == 5 ~ "1"))
 
-data <- data %>% mutate(bs15
-= case_when(
+data <- data %>% 
+mutate(bs15= case_when(
  bs15 == 1 ~ "5",
  bs15 == 2 ~ "4",
  bs15 == 4 ~ "2",
  bs15 == 5 ~ "1"))
-data <- data %>% mutate(bs16 = case_when(bs16 == 1 ~ "5", bs16 == 2 ~ "4", bs16 == 4 ~ "2",
+
+data <- data %>% 
+mutate(bs16 = case_when(
+  bs16 == 1 ~ "5",
+ bs16 == 2 ~ "4",
+  bs16 == 4 ~ "2",
  bs16 == 5 ~ "1"))
-data <- data %>% mutate(bs17
-= case_when(
- bs17 == 1 ~ "5", bs17 == 2 ~ "4", bs17 == 4 ~ "2", bs17 == 5 ~ "1")) 
- data <- data %>%
- mutate(bs18
-= case_when(
- bs18 ==
-1
-~ "5",
- bs18 ==
-2
-~ "4",
- bs18 ==
-4
-~ "2",
- bs18 ==
-5
-~ "1"))
+
 data <- data %>%
- mutate(bs19
-= case_when(
- bs19 ==
-1
-~ "5",
- bs19 ==
-2
-~ "4",
- bs19 ==
-4
-~ "2",
- bs19 ==
-5
-~ "1"))
+ mutate(bs17 = case_when(
+ bs17 == 1 ~ "5", 
+ bs17 == 2 ~ "4",
+  bs17 == 4 ~ "2", 
+  bs17 == 5 ~ "1")) 
+ 
+ data <- data %>%
+ mutate(bs18 = case_when(
+ bs18 == 1 ~ "5",
+ bs18 == 2 ~ "4",
+ bs18 == 4 ~ "2",
+ bs18 == 5 ~ "1"))
+
+data <- data %>%
+ mutate(bs19 = case_when(
+ bs19 == 1 ~ "5",
+ bs19 == 2 ~ "4",
+ bs19 == 4 ~ "2",
+ bs19 == 5 ~ "1"))
 # convertir en numericas
 
 data$bs12 <- as.numeric(data$bs12)
@@ -132,9 +127,3 @@ data$escala_bsc <- rowMeans(data[ c("bs12", "bs13", "bs15", "bs16", "bs17", "bs1
 summary(data$escala_bsc)
 
 saveRDS(data, file = "input/data-proc.rds")
-
-
-
-
-
-
