@@ -1,5 +1,9 @@
 # Plantilla de la evaluación final Ciencia Social Abierta 2026
 
+## Enlace del reporte renderizado
+
+El reporte está disponible en GitHub Pages. Puedes acceder a él [aquí](https://renatodeluca.github.io/evaluacion-final-grupo-6/)
+
 ## Requisitos previos
 
 - Quarto 1.5 o superior instalado en el sistema (https://quarto.org).
