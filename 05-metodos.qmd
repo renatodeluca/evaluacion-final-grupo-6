@@ -335,7 +335,7 @@ ggsave(paste0("output/graphs/", fecha, "-bienestar-subjetivo-por-sexo.png"),
 
 ### Correlaciones en la muestra completa
 
-Se calculan las correlaciones de Pearson (bienestar objetivo y trabajo no remunerado) y de Spearman (satisfacción con la vida y trabajo no remunerado) para toda la muestra, y se presentan en una tabla resumen con estimación, valor p e intervalo de confianza al 95%, la cual se exporta en formato CSV, HTML y PDF.
+Se calculan las correlaciones de Pearson (bienestar objetivo y trabajo no remunerado) y de Spearman (satisfacción con la vida y trabajo no remunerado) para toda la muestra, y se presentan en una tabla resumen con estimación, valor p e intervalo de confianza al 95%, la cual se exporta en varios formatos.
 
 ```{r}
 #| label: correlaciones-muestra-completa
