@@ -1,0 +1,541 @@
+---
+title: "Métodos"
+---
+
+## Protocolo de investigación
+
+Este trabajo se enmarca en los principios de la ciencia abierta, entendida como un enfoque que promueve la transparencia, la accesibilidad y la reproducibilidad del conocimiento científico. La adopción de este enfoque responde a la actual crisis de reproducibilidad que enfrenta la ciencia. En este sentido, @cilibrasi_empowering_2024 señala que una encuesta realizada por Nature en 2016 evidenció que más del 70% de los investigadores había intentado sin éxito reproducir los resultados de otros estudios y que más de la mitad tampoco logró reproducir sus propios experimentos.
+
+Bajo este contexto, el presente trabajo busca desarrollar un protocolo de investigación claro, transparente y suficientemente detallado, de manera que las decisiones metodológicas puedan ser comprendidas, evaluadas y, eventualmente, replicadas por otros investigadores. Asimismo, se reconoce que la documentación sistemática de los procedimientos, el uso de protocolos explícitos y el registro de las distintas etapas del proceso investigativo constituyen elementos fundamentales para fortalecer el rigor científico, reducir errores y favorecer la confiabilidad de los resultados, tal como destacan @knudtson_survey_2019.
+
+
+## Datos
+
+Para este trabajo, se utilizaron los datos de la II Encuesta Nacional del Uso del Tiempo (II ENUT), realizada por el Instituto Nacional de Estadísticas (INE) el año 2023. La ENUT es una encuesta que mide el tiempo destinado por las personas a distintas actividades, llevada a cabo entre el 14 de septiembre al 29 de diciembre, con un tamaño muestral de 48.020 observaciones [@__a].
+
+Para el procesamiento, se debe cargar la base de datos procesada, la cual contiene diversas variables de interés para el análisis, proceso especificado más adelante. Sin embargo, la base de datos cruda, que contiene todas las observaciones de la ENUT 2023, se encuentra en la ruta `input/data-orig/250117-ii-enut-bdd-r.RDS`, o entrando en este [enlace](https://www.ine.gob.cl/estadisticas-por-tema/mercado-laboral/uso-del-tiempo-trabajo-no-remunerado), mientras que la base de datos procesada, que contiene sólo las observaciones de adultos mayores y las variables de interés, se encuentra en el archivo `input/data-proc/data-proc.rds`.
+
+Para el procesamiento y análisis de los datos, se requieren los paquetes `tidyverse`, `sjmisc`, `knitr`, `kableExtra`, `sjPlot`, `stargazer`, `janitor`, `crosstable`, `table1`, `haven`, `psych`, `car`, `summarytools`, `ggplot2`, `dplyr`, `hrbrthemes`, `corrplot`, `survey` y `calidad`.
+
+El código de la carga de paquetes se encuentra en el siguiente bloque de código, el cual se encuentra oculto para no saturar la lectura del documento.
+
+```{r}
+#| label: carga-paquetes-datos
+#| code-fold: true
+#| code-summary: "Mostrar código"
+#| output: false
+#| warning: false
+#| message: false
+
+# Cargar librerías y datos -----------------------------------------------------
+pacman::p_load(tidyverse,
+ sjmisc,
+ knitr,
+ kableExtra,
+ sjPlot,
+ stargazer,
+ janitor,
+ crosstable,
+ table1,
+ haven,
+ psych,
+ car,
+ summarytools,
+ ggplot2,
+ dplyr,
+ hrbrthemes,
+ corrplot)
+
+if (!require(survey)) install.packages('survey'); library(survey)
+if (!require(calidad)) install.packages('calidad'); library(calidad)
+
+options(scipen = 999)
+rm(list = ls())
+enut2023 <- readRDS("input/data-orig/250117-ii-enut-bdd-r.RDS")
+```
+
+## Muestra
+
+Se realizó un muestreo probabilístico, filtrando la base para conservar sólo las observaciones de adultos mayores, es decir, personas de 60 años o más. Finalmente la muestra resultó en 10.099 observaciones, con una distribución de 42,7% hombres y 57,3% mujeres. El procedimiento de filtrado se detalla más adelante, en conjunto con la selección y recodificación del resto de las variables.
+
+## Variables
+
+### Variables de caracterización sociodemográfica
+
+- **Edad**: Variable continua, recodificada para filtrar solo los casos de personas de 60 años o más, con valores desde 60 a 105 años.
+- **Sexo**: Variable dicotómica con posibilidades de respuesta: 1) hombre y 2) mujer.
+
+### Variables de interés
+
+- **Tiempo total de trabajo no remunerado en un día tipo**: Variable que mide la cantidad de horas dedicadas a trabajo no remunerado en un día promedio. Formada por la suma de las variables `Tiempo total de trabajo no remunerado en un día tipo`, `Tiempo de trabajo doméstico no remunerado para el propio hogar día tipo` y `Tiempo de trabajo voluntario y ayudas a otros hogares día tipo`, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 36,18 horas (expresadas en decimales), pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 23,4 horas.
+
+- **Tiempo dedicado al autocuidado y bienestar en un día tipo**: Variable que mide la cantidad de horas dedicadas a autocuidado y bienestar en un día promedio. Formada por la suma de las variables `Tiempo en cuidados personales y actividades fisiológicas` y `Tiempo en vida social, ocio y medios de comunicación masiva`, las cuales miden horas dedicadas a diferentes actividades en un día tipo, y cual agrupa ponderadamente los días de semana y de fin de semana. La variable final quedó con valores que van desde las 0 horas a las 46,71 horas, pero al ser valores que superan las 24 horas, se eliminaron esos casos, quedando finalmente el valor máximo en 24 horas.
+
+- **Satisfacción con la vida**: Variable creada a partir de una variable categórica tipo Likert, del módulo de Bienestar Subjetivo, donde se preguntaba por satisfacción con "Su vida en general", cuyas posibilidades de respuesta iban del 1 al 5, donde 1 corresponde "totalmente insatisfecho(a)" y 5 a "totalmente satisfecho(a)".
+
+- **Bienestar subjetivo de cuidadores**: Variable creada a partir de ocho variables tipo Likert, que evalúan percepciones de sobrecarga en dos grupos: cinco variables dirigidas a cuidadores de personas con dependencia funcional y tres dirigidas a cuidadores de niños, niñas y adolescentes (NNA). Las categorías de las variables dirigidas al último grupo fueron recodificadas para estar en el mismo sentido que las demás, yendo del 1 al 5, donde 1 es siempre y 5 es nunca. Esto resultó en una escala con valores del 1 al 5, donde 1 corresponde a un menor bienestar subjetivo y 5 a un mayor bienestar subjetivo.
+
+## Procesamiento y recodificación de variables
+
+Con base en el código del chunk, el procesamiento de variables se realizó en las siguientes etapas:
+
+### Selección y filtrado inicial
+
+Desde la base `enut2023` se seleccionaron las variables de interés: `edad`, `sexo`, las variables de tiempo (`t_tcnr_dt`, `t_tdnr_dt`, `t_tvaoh_dt`, `t_cpaf_dt`, `t_vsyomcm_dt`), la variable de satisfacción con la vida (`bs1`) y las siete variables de bienestar subjetivo de cuidadores (`bs12`, `bs13`, `bs15`, `bs16`, `bs17`, `bs18`, `bs19`). Luego se filtró la muestra para conservar solo a personas de 60 años o más.
+
+### Recodificación de valores perdidos (NA)
+
+Para las variables de tiempo (terminadas en `_dt`), se asumió que los valores faltantes correspondían a preguntas encadenadas, por lo que un NA implicaba "no realiza la actividad" y se recodificó como 0. Adicionalmente, el valor 96 (que representa una categoría especial, probablemente "no sabe/no responde") se recodificó como NA real. Para las variables de bienestar subjetivo (que comienzan con "bs"), los códigos 85 y 99 (típicamente "no aplica" y "no responde") se recodificaron como NA.
+
+### Recodificación de dirección de la escala
+
+Las siete variables de bienestar subjetivo de cuidadores (`bs12`, `bs13`, `bs15`, `bs16`, `bs17`, `bs18`, `bs19`) tenían originalmente una orientación que debía invertirse para que todas las variables del módulo apuntaran en el mismo sentido. Se aplicó la siguiente transformación a cada una:
+
+- 1→5
+- 2→4
+- 4→2
+- 5→1
+- El valor 3, si existía, se mantuvo implícitamente igual.
+
+Tras la recodificación, todas se convirtieron de texto a formato numérico.
+
+### Construcción de variables compuestas
+
+- *Trabajo no remunerado total* (`t_nr`): suma de `t_tdnr_dt` + `t_tcnr_dt` + `t_tvaoh_dt`.
+- *Bienestar objetivo / autocuidado* (`cpaf`): suma de `t_cpaf_dt` + `t_vsyomcm_dt`.
+
+### Eliminación de valores fuera de rango
+
+Dado que ambas variables compuestas de tiempo (`t_nr` y `cpaf`) representan horas en un día y no pueden exceder las 24 horas, se filtraron los casos manteniendo solo aquellos con valores entre 0 y 24 horas en ambas variables simultáneamente.
+
+### Escala sumativa de bienestar subjetivo
+
+Se calculó `escala_bsc` como el promedio fila a fila (`rowMeans`) de las siete variables de bienestar subjetivo recodificadas, excluyendo los NA del cálculo (`na.rm = TRUE`). Esto generó una escala continua donde valores más altos indican mayor bienestar subjetivo percibido por los cuidadores.
+
+### Guardado
+
+La base procesada se guardó como archivo `.rds` en `input/data-proc/data-proc.rds` para su uso posterior en el análisis.
+
+```{r}
+#| label: procesamiento-variables
+#| code-fold: true
+#| code-summary: "Mostrar código"
+#| output: false
+#| warning: false
+#| message: false
+
+# 1. Filtrar y seleccionar variables -------------------------------------------
+## Selección de variables de interés
+data <- enut2023 %>%
+ select(
+ edad,
+ sexo,
+ t_tcnr_dt, #trabajo cuidados no remunerado
+ t_tdnr_dt, #trabajo doméstico no remunerado para el propio hogar
+ t_tvaoh_dt, #trabajo voluntario y ayudas a otros hogares
+ t_cpaf_dt, t_vsyomcm_dt, # bienestar objetivo
+ bs1, #satisfaccion con la vida
+ bs12, bs13, bs15, bs16, bs17, bs18, bs19 #bienestar subjetivo
+ )
+
+## Muestra >=60 años
+data <- data %>%
+ filter(edad >= 60)
+names(data)
+dim(data)
+
+# Recodificación de NAs------------------------------
+## preguntas encadenadas, por lo que NA = no, por lo que NA = 0
+data <- data %>%
+ mutate(across(ends_with("_dt"), ~coalesce(., 0.00000000)))
+data <- data %>%
+ mutate(across(ends_with("_dt"), ~ifelse(. == 96.000000, NA, .)))
+data <- data %>%
+ mutate(across(starts_with("bs"), ~ifelse(. == 85, NA, .)))
+data <- data %>%
+ mutate(across(starts_with("bs"), ~ifelse(. == 99, NA, .)))
+colSums(is.na(data))
+
+# recodificar dirección
+data <- data %>%
+ mutate(bs12 = case_when(
+ bs12 == 1 ~ "5",
+ bs12 == 2 ~ "4",
+ bs12 == 4 ~ "2",
+ bs12 == 5 ~ "1"))
+
+data <- data %>%
+ mutate(bs13 = case_when(
+ bs13 == 1 ~ "5",
+ bs13 == 2 ~ "4",
+ bs13 == 4 ~ "2",
+ bs13 == 5 ~ "1"))
+
+data <- data %>%
+ mutate(bs15 = case_when(
+ bs15 == 1 ~ "5",
+ bs15 == 2 ~ "4",
+ bs15 == 4 ~ "2",
+ bs15 == 5 ~ "1"))
+
+data <- data %>%
+ mutate(bs16 = case_when(
+ bs16 == 1 ~ "5",
+ bs16 == 2 ~ "4",
+ bs16 == 4 ~ "2",
+ bs16 == 5 ~ "1"))
+
+data <- data %>%
+ mutate(bs17 = case_when(
+ bs17 == 1 ~ "5",
+ bs17 == 2 ~ "4",
+ bs17 == 4 ~ "2",
+ bs17 == 5 ~ "1"))
+
+data <- data %>%
+ mutate(bs18 = case_when(
+ bs18 == 1 ~ "5",
+ bs18 == 2 ~ "4",
+ bs18 == 4 ~ "2",
+ bs18 == 5 ~ "1"))
+
+data <- data %>%
+ mutate(bs19 = case_when(
+ bs19 == 1 ~ "5",
+ bs19 == 2 ~ "4",
+ bs19 == 4 ~ "2",
+ bs19 == 5 ~ "1"))
+
+# convertir en numéricas
+data$bs12 <- as.numeric(data$bs12)
+data$bs13 <- as.numeric(data$bs13)
+data$bs15 <- as.numeric(data$bs15)
+data$bs16 <- as.numeric(data$bs16)
+data$bs17 <- as.numeric(data$bs17)
+data$bs18 <- as.numeric(data$bs18)
+data$bs19 <- as.numeric(data$bs19)
+
+# trabajo no remunerado total--------------------------------
+data$t_nr <- data$t_tdnr_dt + data$t_tcnr_dt + data$t_tvaoh_dt
+describe(data$t_nr)
+summary(data$t_nr)
+
+# tiempo dedicado a bienestar objetivo------------------------
+data$cpaf <- data$t_cpaf_dt + data$t_vsyomcm_dt
+
+# eliminar valores fuera de rango
+limite_inferior <- 0
+limite_superior <- 24
+data <- data %>%
+ filter(t_nr >= limite_inferior & t_nr <= limite_superior,
+ cpaf >= limite_inferior & cpaf <= limite_superior)
+
+## escala sumativa bienestar subjetivo -----
+data$escala_bsc <- rowMeans(data[ c("bs12", "bs13", "bs15", "bs16", "bs17", "bs18", "bs19")],
+ na.rm = TRUE)
+summary(data$escala_bsc)
+
+saveRDS(data, file = "input/data-proc/data-proc.rds")
+```
+
+## Estrategia de análisis
+
+Para el análisis, en primer lugar se realizó un análisis univariado de las variables seleccionadas, calculando medidas de dispersión para las variables cuantitativas y medidas de frecuencia para las variables categóricas.
+
+Para evaluar la hipótesis 1, se calculó el coeficiente de correlación de Pearson entre las variables "Tiempo total de trabajo no remunerado en un día tipo" y "Tiempo dedicado a autocuidado y bienestar en un día tipo", para evaluar si existe una correlación estadísticamente significativa entre las variables y si su asociación es negativa.
+
+Para evaluar la hipótesis 2, se calculó el coeficiente de correlación de Pearson entre las variables "Tiempo total de trabajo no remunerado en un día tipo" y "Bienestar subjetivo de cuidadores", para evaluar si la asociación entre estas variables es negativa y si es estadísticamente significativa.
+
+Para evaluar la hipótesis 3, se calculó el coeficiente de correlación de Spearman entre las variables "Tiempo total de trabajo no remunerado en un día tipo" y "Satisfacción con la vida", para evaluar si la relación entre estas variables es negativa y si es estadísticamente significativa.
+
+Los análisis estadísticos para contraste de hipótesis y análisis descriptivos se realizaron en el software R.
+
+### Carga de datos y preparación de carpetas de salida
+
+Se carga la base procesada y se preparan las carpetas de salida (`output/graphs/` y `output/tables/`) y la fecha de versión, utilizadas más adelante para exportar los gráficos y tablas que resulten del análisis.
+
+```{r}
+#| label: carga-datos-analisis
+#| code-fold: true
+#| code-summary: "Ver código"
+#| output: false
+#| warning: false
+#| message: false
+
+data <- readRDS("input/data-proc/data-proc.rds")
+
+# Carpetas de salida y fecha de versión para nombrar los archivos exportados
+dir.create("output/graphs", recursive = TRUE, showWarnings = FALSE)
+dir.create("output/tables", recursive = TRUE, showWarnings = FALSE)
+fecha <- format(Sys.Date(), "%Y-%m-%d")
+```
+
+### Estadísticos descriptivos y gráficos por sexo
+
+Para las cuatro variables de interés (trabajo no remunerado, bienestar objetivo, bienestar subjetivo y satisfacción con la vida) se calculan, omitiendo los valores perdidos, el mínimo, máximo, media, mediana, coeficiente de asimetría y número de observaciones válidas. Adicionalmente, se generan tres gráficos de barras que comparan promedios entre hombres y mujeres: horas de trabajo no remunerado, horas dedicadas a bienestar objetivo, y puntaje de bienestar subjetivo del cuidador/a, los cuales se exportan a `output/graphs/`.
+
+```{r}
+#| label: descriptivos-y-graficos-sexo
+#| code-fold: true
+#| code-summary: "Ver código"
+#| output: false
+#| warning: false
+#| message: false
+
+# Estadísticos descriptivos --------------------------------------------------
+cat("\nESTADÍSTICOS DESCRIPTIVOS\n\n")
+for(var in c("t_nr", "cpaf", "escala_bsc", "bs1")) {
+  x <- na.omit(data[[var]])
+
+  cat("\n", switch(var,
+    "t_nr" = "Horas trabajo no remunerado",
+    "cpaf" = "Bienestar objetivo",
+    "escala_bsc" = "Bienestar subjetivo",
+    "bs1" = "Satisfacción con la vida"), ":\n", sep = "")
+
+  cat("- Mínimo:", min(x), "\n")
+  cat("- Máximo:", max(x), "\n")
+  cat("- Media:", mean(x), "\n")
+  cat("- Mediana:", median(x), "\n")
+  cat("- Asimetría:", sum((x - mean(x))^3)/length(x)/(sd(x)^3), "\n")
+  cat("- N observaciones:", length(x), "\n")
+}
+
+# Gráficos por sexo -----------------------------------------------------------
+data <- data %>%
+  mutate(t_nr_horas = t_nr / 60,
+         cpaf_horas = cpaf / 60)
+
+g_tnr_sexo <- ggplot(data %>% group_by(sexo) %>% summarise(promedio_tnr = mean(t_nr_horas, na.rm = TRUE)),
+       aes(x = factor(sexo), y = promedio_tnr, fill = factor(sexo))) +
+  geom_col() +
+  scale_fill_manual(values = c("#00bfc4", "#ff0cae"), labels = c("Hombres", "Mujeres")) +
+  labs(title = "Promedio de trabajo no remunerado por sexo (en horas)", x = "Sexo", y = "Horas diarias") +
+  theme_minimal()
+g_tnr_sexo
+ggsave(paste0("output/graphs/", fecha, "-trabajo-no-remunerado-por-sexo.png"),
+       plot = g_tnr_sexo, width = 8, height = 6, dpi = 300)
+
+g_cpaf_sexo <- ggplot(data %>% group_by(sexo) %>% summarise(promedio_cpaf = mean(cpaf_horas, na.rm = TRUE)),
+       aes(x = factor(sexo), y = promedio_cpaf, fill = factor(sexo))) +
+  geom_col() +
+  scale_fill_manual(values = c("#00bfc4", "#f8766d"), labels = c("Hombres", "Mujeres")) +
+  labs(title = "Promedio de horas dedicadas a bienestar objetivo por sexo", x = "Sexo", y = "Horas diarias") +
+  theme_minimal()
+g_cpaf_sexo
+ggsave(paste0("output/graphs/", fecha, "-bienestar-objetivo-por-sexo.png"),
+       plot = g_cpaf_sexo, width = 8, height = 6, dpi = 300)
+
+g_bsc_sexo <- ggplot(data %>% group_by(sexo) %>% summarise(promedio_bsc = mean(escala_bsc, na.rm = TRUE)),
+       aes(x = factor(sexo), y = promedio_bsc, fill = factor(sexo))) +
+  geom_col() +
+  scale_fill_manual(values = c("#00bfc4", "#f8766d"), labels = c("Hombres", "Mujeres")) +
+  labs(title = "Promedio de bienestar subjetivo del cuidador/a por sexo", x = "Sexo", y = "Puntaje promedio (escala 1-5)") +
+  theme_minimal()
+g_bsc_sexo
+ggsave(paste0("output/graphs/", fecha, "-bienestar-subjetivo-por-sexo.png"),
+       plot = g_bsc_sexo, width = 8, height = 6, dpi = 300)
+```
+
+### Correlaciones en la muestra completa
+
+Se calculan las correlaciones de Pearson (bienestar objetivo y trabajo no remunerado) y de Spearman (satisfacción con la vida y trabajo no remunerado) para toda la muestra, y se presentan en una tabla resumen con estimación, valor p e intervalo de confianza al 95%, la cual se exporta en formato CSV, HTML y PDF.
+
+```{r}
+#| label: correlaciones-muestra-completa
+#| code-fold: true
+#| code-summary: "Ver código"
+#| output: false
+#| warning: false
+#| message: false
+
+cor.test(data$cpaf, data$t_nr, method = "pearson", use = "complete.obs")
+cor.test(data$bs1, data$t_nr, method = "spearman", use = "complete.obs")
+
+tabla_resultados <- data.frame(
+  Variables = c("Bienestar objetivo ~ Horas de trabajo no remunerado",
+                "Satisfacción con la vida ~ Horas de trabajo no remunerado"),
+  Método = c("Pearson", "Spearman"),
+  Correlación = c(
+    cor.test(data$cpaf, data$t_nr, method = "pearson")$estimate,
+    cor.test(data$bs1, data$t_nr, method = "spearman")$estimate
+  ),
+  `Valor p` = c(
+    cor.test(data$cpaf, data$t_nr, method = "pearson")$p.value,
+    cor.test(data$bs1, data$t_nr, method = "spearman")$p.value
+  ),
+  `IC 95%` = c(
+    paste(round(cor.test(data$cpaf, data$t_nr)$conf.int, 2), collapse = " a "),
+    paste(round(cor.test(data$bs1, data$t_nr)$conf.int, 2), collapse = " a ")
+  )
+)
+
+tab_df(tabla_resultados,
+       title = "Resultados de Correlación",
+       show.rownames = FALSE,
+       alternate.rows = TRUE)
+
+# Exportar tabla en CSV, HTML y PDF
+write.csv(tabla_resultados,
+          paste0("output/tables/", fecha, "-correlaciones-muestra-completa.csv"),
+          row.names = FALSE)
+
+tabla_resultados %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Muestra completa") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlaciones-muestra-completa.html"))
+
+tabla_resultados %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Muestra completa") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlaciones-muestra-completa.pdf"))
+```
+
+### Correlaciones en cuidadores, según sexo
+
+Se filtra la muestra para conservar solo a quienes tienen un valor válido en la escala de bienestar subjetivo (es decir, los cuidadores), y se repiten las correlaciones de interés dentro de este subgrupo y de sus subconjuntos por sexo (mujeres y hombres cuidadores), junto con sus respectivas matrices de correlación y mapas de calor. Todas las tablas y matrices se exportan a `output/tables/`, y los mapas de calor a `output/graphs/`.
+
+```{r}
+#| label: correlaciones-cuidadores-por-sexo
+#| code-fold: true
+#| code-summary: "Ver código"
+#| output: false
+#| warning: false
+#| message: false
+
+cuidadores <- data %>%
+  filter(!is.na(escala_bsc))
+
+# --- Cuidadores (total) -------------------------------------------------------
+resultado <- cor.test(cuidadores$cpaf, cuidadores$t_nr, method = "pearson", use = "complete.obs")
+tabla_cuidadores <- broom::tidy(resultado)
+tabla_cuidadores %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE)
+
+write.csv(tabla_cuidadores,
+          paste0("output/tables/", fecha, "-correlacion-cuidadores.csv"),
+          row.names = FALSE)
+tabla_cuidadores %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Cuidadores") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlacion-cuidadores.html"))
+
+tabla_cuidadores %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Cuidadores") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlacion-cuidadores.pdf"))
+
+cor.test(cuidadores$bs1, cuidadores$t_nr, method = "spearman", use = "complete.obs")
+cor.test(cuidadores$escala_bsc, cuidadores$t_nr, method = "spearman", use = "complete.obs")
+
+selected_vars <- cuidadores %>% select(t_nr, escala_bsc, bs1)
+M <- cor(selected_vars, method = "spearman", use = "complete.obs")
+sjPlot::tab_corr(selected_vars, triangle = "lower")
+rownames(M) <- c("Horas de trabajo no remunerado", "Bienestar subjetivo", "Satisfacción con la vida")
+colnames(M) <- rownames(M)
+
+corrplot(M, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
+         addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
+         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         bg = "white", na.label = "-")
+
+write.csv(M, paste0("output/tables/", fecha, "-matriz-correlacion-cuidadores.csv"))
+
+png(paste0("output/graphs/", fecha, "-corrplot-cuidadores.png"), width = 1600, height = 1600, res = 300)
+corrplot(M, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
+         addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
+         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         bg = "white", na.label = "-")
+dev.off()
+
+# --- Mujeres cuidadoras --------------------------------------------------------
+mujeres <- cuidadores %>% filter(sexo == 2)
+
+resultado2 <- cor.test(mujeres$cpaf, mujeres$t_nr, method = "pearson", use = "complete.obs")
+tabla_mujeres <- broom::tidy(resultado2)
+tabla_mujeres %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE)
+
+write.csv(tabla_mujeres,
+          paste0("output/tables/", fecha, "-correlacion-mujeres-cuidadoras.csv"),
+          row.names = FALSE)
+tabla_mujeres %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Mujeres cuidadoras") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlacion-mujeres-cuidadoras.html"))
+
+tabla_mujeres %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Mujeres cuidadoras") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlacion-mujeres-cuidadoras.pdf"))
+
+cor.test(mujeres$bs1, mujeres$t_nr, method = "spearman", use = "complete.obs")
+cor.test(mujeres$escala_bsc, mujeres$t_nr, method = "spearman", use = "complete.obs")
+
+selected_vars2 <- mujeres %>% select(t_nr, escala_bsc, bs1)
+M2 <- cor(selected_vars2, method = "spearman", use = "complete.obs")
+rownames(M2) <- c("Horas de trabajo no remunerado", "Bienestar subjetivo", "Satisfacción con la vida")
+colnames(M2) <- rownames(M2)
+
+corrplot(M2, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
+         addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
+         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         bg = "white", na.label = "-")
+
+write.csv(M2, paste0("output/tables/", fecha, "-matriz-correlacion-mujeres-cuidadoras.csv"))
+
+png(paste0("output/graphs/", fecha, "-corrplot-mujeres-cuidadoras.png"), width = 1600, height = 1600, res = 300)
+corrplot(M2, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
+         addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
+         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         bg = "white", na.label = "-")
+dev.off()
+
+# --- Hombres cuidadores ---------------------------------------------------------
+hombres <- cuidadores %>% filter(sexo == 1)
+
+resultado3 <- cor.test(hombres$cpaf, hombres$t_nr, method = "pearson", use = "complete.obs")
+tabla_hombres <- broom::tidy(resultado3)
+tabla_hombres %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE)
+
+write.csv(tabla_hombres,
+          paste0("output/tables/", fecha, "-correlacion-hombres-cuidadores.csv"),
+          row.names = FALSE)
+tabla_hombres %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Hombres cuidadores") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlacion-hombres-cuidadores.html"))
+
+tabla_hombres %>%
+  kable(format = "html", digits = 3, caption = "Resultados de Correlación - Hombres cuidadores") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE) %>%
+  save_kable(paste0("output/tables/", fecha, "-correlacion-hombres-cuidadores.pdf"))
+
+cor.test(hombres$escala_bsc, hombres$t_nr, method = "spearman", use = "complete.obs")
+cor.test(hombres$bs1, hombres$t_nr, method = "spearman", use = "complete.obs")
+
+selected_vars3 <- hombres %>% select(t_nr, escala_bsc, bs1)
+M3 <- cor(selected_vars3, method = "spearman", use = "complete.obs")
+sjPlot::tab_corr(selected_vars3, triangle = "lower")
+rownames(M3) <- c("Horas de trabajo no remunerado", "Bienestar subjetivo", "Satisfacción con la vida")
+colnames(M3) <- rownames(M3)
+
+corrplot(M3, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
+         addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
+         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         bg = "white", na.label = "-")
+
+write.csv(M3, paste0("output/tables/", fecha, "-matriz-correlacion-hombres-cuidadores.csv"))
+
+png(paste0("output/graphs/", fecha, "-corrplot-hombres-cuidadores.png"), width = 1600, height = 1600, res = 300)
+corrplot(M3, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
+         addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
+         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         bg = "white", na.label = "-")
+dev.off()
+```
+
