@@ -3,6 +3,8 @@ title: "Resultados"
 ---
 Interpreta resultados, limitaciones y aportes.
 
+## Resultados
+
 En primer lugar, para las horas promedio en un día que los adultos mayores dedican al trabajo de cuidados no remunerado, el mínimo de la muestra fue 0 horas, mientras que el máximo fue de 23.4 horas, aunque el promedio de horas gastadas fue de 2.75. Con respecto a las horas dedicadas al bienestar objetivo, lo mínimo se encuentra en 0 horas, mientras que lo máximo en 24, aunque la media está en 11.31 horas. Por otro lado, con respecto al bienestar subjetivo en cuidadores, el promedio de esta escala es 4.17, lo cual se ubica entre “Casi nunca”, y “Nunca”, lo que en general, refiere a que los cuidadores no perciben que sus labores de cuidados tengan muchos efectos negativos sobre ellos.  
 
 Con respecto al promedio de trabajo no remunerado por sexo, se evidencia que, incluso para adultos mayores, las mujeres toman mayor carga de trabajo de cuidados no remunerado, dedicando en promedio más del doble de las horas que dedican los hombres, como se puede ver de forma interactiva al pinchar la @fig-tnr-sexo. Los promedios del resto de variables e indicadores según sexo pueden examinarse en la @fig-cpaf-sexo y en la @fig-bsc-sexo respectivamente.
@@ -46,3 +48,11 @@ Matrices de correlación de Spearman segregadas según sexo de los cuidadores.
 :::
 
 Entonces, de las hipótesis anteriormente señaladas, no sería posible demostrar evidencia a favor de la primera hipótesis de que hay una asociación negativa entre la carga del trabajo de cuidados no remunerado y el bienestar objetivo de adultos mayores, pero sí existe cuando se filtra por aquellos que son específicamente cuidadores. Pero sí es posible encontrar evidencia a favor de la segunda y tercera hipótesis, porque hay una asociación negativa entre la carga del trabajo de cuidados no remunerado y el bienestar subjetivo de adultos mayores cuidadores, y también una asociación negativa entre la carga del trabajo de cuidados no remunerado y la satisfacción con la vida de adultos mayores.
+
+## Limitaciones
+
+
+
+
+
+## Aportes
