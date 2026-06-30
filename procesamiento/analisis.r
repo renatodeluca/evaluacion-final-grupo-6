@@ -20,7 +20,7 @@ if (!require(survey)) install.packages('survey'); library(survey)
 if (!require(calidad)) install.packages('calidad'); library(calidad)
 options(scipen = 999)
 rm(list = ls())
-enut2023 <- readRDS("input/data-proc.rds")
+data <- readRDS("input/data-proc/data-proc.rds")
 # graficos univariados ----- ---------------------------------------------
 # Versión ultra simple con base R (sin paquetes adicionales)
 cat("\nESTADÍSTICOS DESCRIPTIVOS\n\n")
@@ -162,6 +162,8 @@ rownames(M2) <- c("Horas de trabajo no remunerado",
  "Bienestar subjetivo",
  "Satisfacción con la vida")
 colnames(M2) <- rownames(M2)
+
+
 corrplot::corrplot(M2,
  method = "color",
  tl.cex = 0.7,
@@ -174,6 +176,11 @@ corrplot::corrplot(M2,
  col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
  bg = "white",
  na.label = "-")
+
+
+
+
+ 
 # filtrar por hombres cuidadores----
 hombres <- cuidadores %>% filter(sexo == 1)
 resultado3 <- cor.test(hombres$cpaf, hombres$t_nr, method = "pearson", use = "complete.obs")
@@ -193,6 +200,7 @@ rownames(M3) <- c("Horas de trabajo no remunerado",
  "Bienestar subjetivo",
  "Satisfacción con la vida")
 colnames(M3) <- rownames(M3)
+
 corrplot::corrplot(M3,
  method = "color",
  tl.cex = 0.7,
@@ -205,3 +213,9 @@ corrplot::corrplot(M3,
  col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
  bg = "white",
  na.label = "-")
+
+
+
+
+
+

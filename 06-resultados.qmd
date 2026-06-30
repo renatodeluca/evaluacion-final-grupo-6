@@ -2,6 +2,142 @@
 title: "Resultados"
 ---
 Interpreta resultados, limitaciones y aportes.
+```{r}
+#| results: false
+#| message: false
+#| warning: false
+#| echo: false
+# Cargar librerías y datos -----------------------------------------------------
+pacman::p_load(tidyverse,
+ sjmisc,
+ knitr,
+ kableExtra,
+ sjPlot,
+ stargazer,
+ janitor,
+ crosstable,
+ table1,
+ haven,
+ psych,
+ car,
+ summarytools,
+ ggplot2,
+ dplyr,
+ hrbrthemes)
+
+if (!require(survey)) install.packages('survey'); library(survey)
+if (!require(calidad)) install.packages('calidad'); library(calidad)
+options(scipen = 999)
+rm(list = ls())
+data <- readRDS("input/data-proc/data-proc.rds")
+# graficos univariados ----- ---------------------------------------------
+# Versión ultra simple con base R (sin paquetes adicionales)
+cat("\nESTADÍSTICOS DESCRIPTIVOS\n\n")
+for(var in c("t_nr", "cpaf", "escala_bsc", "bs1")) {
+ x <- na.omit(data[[var]])
+
+ cat("\n", switch(var,
+ "t_nr" = "Horas trabajo no remunerado",
+ "cpaf" = "Bienestar objetivo",
+ "escala_bsc" = "Bienestar subjetivo",
+ "bs1" = "Satisfacción con la vida"), ":\n", sep = "")
+
+ cat("- Mínimo:", min(x), "\n")
+ cat("- Máximo:", max(x), "\n")
+ cat("- Media:", mean(x), "\n")
+ cat("- Mediana:", median(x), "\n")
+ cat("- Asimetría:", sum((x - mean(x))^3)/length(x)/(sd(x)^3), "\n")
+ cat("- N observaciones:", length(x), "\n")
+}
+#graficos
+data <- data %>%
+ mutate(t_nr_horas = t_nr / 60)
+
+
+# correlaciones muestra completa -----------------------------------------------
+cor.test(data$cpaf, data$t_nr, method = "pearson", use = "complete.obs")
+cor.test(data$bs1, data$t_nr, method = "spearman", use = "complete.obs")
+library(sjPlot)
+# dataframe con resultados
+tabla_resultados <- data.frame(
+ Variables = c("Bienestar objetivo ~ Horas de trabajo no remunerado", "Satisfacción con la vida
+~ Horas de trabajo no remunerado"),
+ Método = c("Pearson", "Spearman"),
+ Correlación = c(
+ cor.test(data$cpaf, data$t_nr, method = "pearson")$estimate,
+ cor.test(data$bs1, data$t_nr, method = "spearman")$estimate
+ ),
+ `Valor p` = c(
+ cor.test(data$cpaf, data$t_nr, method = "pearson")$p.value,
+ cor.test(data$bs1, data$t_nr, method = "spearman")$p.value
+ ),
+ `IC 95%` = c(
+ paste(round(cor.test(data$cpaf, data$t_nr)$conf.int, 2), collapse = " a "),
+ paste(round(cor.test(data$bs1, data$t_nr)$conf.int, 2), collapse = " a ")
+ )
+)
+
+# filtrar por cuidadores ----
+cuidadores <- data %>%
+ filter(!is.na(escala_bsc))
+library(broom)
+library(knitr)
+resultado <- cor.test(cuidadores$cpaf, cuidadores$t_nr, method = "pearson", use =
+"complete.obs")
+
+
+
+
+
+cor.test(cuidadores$bs1, cuidadores$t_nr, method = "spearman", use = "complete.obs")
+cor.test(cuidadores$escala_bsc, cuidadores$t_nr, method = "spearman", use = "complete.obs")
+selected_vars <- cuidadores %>%
+ select(t_nr, escala_bsc, bs1)
+M <- cor(selected_vars, method = "spearman", use = "complete.obs") #matriz de correlaciom
+sjPlot::tab_corr(selected_vars,
+ triangle = "lower")
+rownames(M) <- c("Horas de trabajo no remunerado",
+ "Bienestar subjetivo",
+ "Satisfacción con la vida")
+colnames(M) <- rownames(M)
+
+
+
+# filtrar por mujeres cuidadoras----
+mujeres <- cuidadores %>% filter(sexo == 2)
+resultado2 <- cor.test(mujeres$cpaf, mujeres$t_nr, method = "pearson", use = "complete.obs")
+cor.test(mujeres$cpaf, mujeres$t_nr, method = "pearson", use = "complete.obs")
+
+cor.test(mujeres$bs1, mujeres$t_nr, method = "spearman", use = "complete.obs")
+cor.test(mujeres$escala_bsc, mujeres$t_nr, method = "spearman", use = "complete.obs")
+selected_vars2 <- mujeres %>%
+ select(t_nr, escala_bsc, bs1)
+M2 <- cor(selected_vars2, method = "spearman", use = "complete.obs") #matriz de correlaciom
+rownames(M2) <- c("Horas de trabajo no remunerado",
+ "Bienestar subjetivo",
+ "Satisfacción con la vida")
+colnames(M2) <- rownames(M2)
+
+
+# filtrar por hombres cuidadores----
+hombres <- cuidadores %>% filter(sexo == 1)
+resultado3 <- cor.test(hombres$cpaf, hombres$t_nr, method = "pearson", use = "complete.obs")
+
+cor.test(hombres$escala_bsc, hombres$t_nr, method = "spearman", use = "complete.obs")
+cor.test(hombres$bs1, hombres$t_nr, method = "spearman", use = "complete.obs")
+selected_vars3 <- hombres %>%
+ select(t_nr, escala_bsc, bs1)
+M3 <- cor(selected_vars3, method = "spearman", use = "complete.obs") #matriz de correlaciom
+sjPlot::tab_corr(selected_vars3,
+ triangle = "lower")
+rownames(M3) <- c("Horas de trabajo no remunerado",
+ "Bienestar subjetivo",
+ "Satisfacción con la vida")
+colnames(M3) <- rownames(M3)
+
+
+```
+
 
 En primer lugar, para las horas promedio en un día que los adultos mayores dedican al trabajo de cuidados no remunerado, el mínimo de la muestra fue 0 horas, mientras que el máximo fue de 23.4 horas, aunque el promedio de horas gastadas fue de 2.75. Con respecto a las horas dedicadas 9 al bienestar objetivo, lo mínimo se encuentra en 0 horas, mientras que lo máximo en 24, aunque la media está en 11.31 horas. Por otro lado, con respecto al bienestar subjetivo en cuidadores, el promedio de esta escala es 4.17, lo cual se ubica entre “Casi nunca”, y “Nunca”, lo que en general, refiere a que los cuidadores no perciben que sus labores de cuidados tengan muchos efectos negativos sobre ellos.  
 
@@ -14,13 +150,6 @@ En primer lugar, para las horas promedio en un día que los adultos mayores dedi
 
 ```
 
-```{r}
-#| results: false
-#| message: false
-#| warning: false
-#| echo: false
-
-```
 
 Con respecto al promedio de trabajo no remunerado por sexo, se evidencia que, incluso para adultos mayores, las mujeres toman mayor carga de trabajo de cuidados no remunerado, dedicando en promedio más del doble de las horas que dedican los hombres. 
 
@@ -29,31 +158,49 @@ Con respecto al promedio de trabajo no remunerado por sexo, se evidencia que, in
 #| message: false
 #| warning: false
 #| echo: false
-
-
+#| fig-align: center
+#| out-width: '80%'
+ggplot(data %>% group_by(sexo) %>% summarise(promedio_tnr = mean(t_nr_horas, na.rm =
+TRUE)),
+ aes(x = factor(sexo), y = promedio_tnr, fill = factor(sexo))) +
+ geom_col() +
+ scale_fill_manual(values = c("#00bfc4", "#ff0cae"),
+ labels = c("Hombres", "Mujeres")) +
+ labs(
+ title = "Promedio de trabajo no remunerado por sexo (en horas)",
+ x = "Sexo",
+ y = "Horas diarias"
+ ) +
+ theme_minimal()
 
 ```
 
 En segundo lugar, en la muestra completa, es decir, todos los adultos mayores, la correlación entre horas de trabajo de cuidados no remunerado y bienestar objetivo es de 0.467 (p-value < 0.01), por lo que es estadísticamente significativa con un 99% de confianza, es una correlación de intensidad mediana, y es positiva, lo que quiere decir que mientras más horas de trabajo de cuidados no remunerados, hay un mayor bienestar objetivo en los adultos mayores. Por otro lado, la correlación entre horas de trabajo de cuidados no remunerado y satisfacción con la vida es de -0.028 (p-value < 0.01), por lo que es estadísticamente significativa con un 99% de confianza,  muy pequeña en intensidad, y negativa, que significa que mientras más horas de trabajo de cuidados no remunerado, hay una menor satisfacción con la vida.
 
 ```{r}
-#| results: false
+#| results: true
 #| message: false
 #| warning: false
 #| echo: false
-
-
-
+#| tbl-cap: "Resultados de correlación entre Bienestar objetivo y Horas de trabajo no remunerado y Satisfacción con la vida y Horas de trabajo no remunerado."
+tab_df(tabla_resultados,
+ title = "Resultados de Correlación",
+ show.rownames = FALSE,
+ alternate.rows = TRUE)
 ```
 
 Sin embargo, se percibe una diferencia entre la muestra completa al filtrar por quienes son específicamente cuidadores (de niños y de personas en situación de dependencia funcional). Para la correlación entre horas de trabajo no remunerado y bienestar objetivo, esta es de -0.055 (p-value = 0.09), por lo que, aunque muestre una gran diferencia al resultado de la muestra completa, ya que la correlación es negativa, es decir, que a mayor cantidad de horas de trabajo de cuidados no remunerados los cuidadores presentarían un menor bienestar objetivo, no es estadísticamente significativa, ya que el intervalo de confianza pasa por 0.  
 
 ```{r}
-#| results: false
+#| results: true
 #| message: false
 #| warning: false
 #| echo: false
-
+#| tbl-cap: "Resultados de correlación entre Trabajo no remunerado y Bienestar objetivo de personas cuidadoras."
+tidy(resultado) %>%
+ kable(format = "html", digits = 3,
+ caption = "Resultados de Correlación") %>%
+ kable_styling(bootstrap_options = "striped", full_width = FALSE)
 
 
 ```
@@ -65,21 +212,38 @@ Por otra parte, la correlación entre horas de trabajo de cuidados no remunerado
 #| message: false
 #| warning: false
 #| echo: false
+#| fig-align: center
+#| out-width: '80%'
+#| fig-cap: "Matriz de correlación entre horas de trabajo de cuidados no remunerado, bienestar subjetivo y satisfacción con la vida en adultas mayores muejeres."
 
-
+corrplot::corrplot(M,
+ method = "color",
+ tl.cex = 0.7,
+ mar = c(0, 0, 0, 0),
+ addCoef.col = "black",
+ number.cex = 0.6,
+ cl.cex = 0.6,
+ type = "upper",
+ tl.col = "black",
+ col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+ bg = "white",
+ na.label = "-")
 ```
 
 Si se filtra por mujeres cuidadoras, quienes son el 75% de los cuidadores en total, la asociación entre horas de trabajo de cuidados no remunerado y bienestar objetivo la correlación es de -0.095 (p-value < 0.05), por lo que es estadísticamente significativa con un 95% de confianza, y no presenta transformaciones a la asociación entre estas variables en la muestra total de cuidadores. Es, además, una correlación muy pequeña y negativa, lo que quiere decir que a mayor cantidad de horas de trabajo de cuidados no remunerado, menor bienestar objetivo.  
 
 ```{r}
-#| results: false
+#| results: true
 #| message: false
 #| warning: false
 #| echo: false
-
-
-
-
+#| fig-align: center
+#| out-width: '80%'
+#| tbl-cap: "Resultados de correlación entre Horas de trabajo no remunerado y Bienestar objetivo en mujeres."
+tidy(resultado2) %>%
+ kable(format = "html", digits = 3,
+ caption = "Resultados de Correlación") %>%
+ kable_styling(bootstrap_options = "striped", full_width = FALSE)
 ```
 
 Luego, entre horas de trabajo de cuidados no remunerado y bienestar subjetivo de cuidadores es de -0.198 (p-value < 0.01), por lo que es estadísticamente significativa con un 99% de confianza, es pequeña, y negativa, que significa que a mayor cantidad de horas de trabajo, menor bienestar subjetivo. Por último, entre horas de trabajo de cuidados no remunerado y satisfacción con la vida la correlación es de -0.053 (p-value < 0.05), por lo que es estadísticamente significativa con un 99% de confianza, muy pequeña, y negativa, por lo que a mayor horas de trabajo de cuidados no remunerado menor satisfacción con la vida. 
@@ -89,22 +253,41 @@ Luego, entre horas de trabajo de cuidados no remunerado y bienestar subjetivo de
 #| message: false
 #| warning: false
 #| echo: false
+#| fig-align: center
+#| out-width: '80%'
+#| fig-cap: "Matriz de correlación entre horas de trabajo de cuidados no remunerado, bienestar subjetivo y satisfacción con la vida en adultas mayores muejeres cuidadoras."
 
+corrplot::corrplot(M2,
+ method = "color",
+ tl.cex = 0.7,
+ mar = c(0, 0, 0, 0),
+ addCoef.col = "black",
+ number.cex = 0.6,
+ cl.cex = 0.6,
+ type = "upper",
+ tl.col = "black",
+ col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+ bg = "white",
+ na.label = "-")
 
 
 
 ```
 
-Finalmente, para los hombres la asociación entre horas de trabajo de cuidados no remunerado y bienestar objetivo la correlación es de 0.123 (p = 0.07), pero no es estadísticamente significativa, porque su intervalo de confianza pasa por 0, entonces, a pesar de ser muy pequeña y positiva, no es posible afirmar que a mayor horas de trabajo de cuidados no remunerado, hay mayor bienestar objetivo.  
+Finalmente, para los hombres la asociación entre horas de trabajo de cuidados no remunerado y bienestar objetivo la correlación es de 0.124 (p = 0.07), pero no es estadísticamente significativa, porque su intervalo de confianza pasa por 0, entonces, a pesar de ser muy pequeña y positiva, no es posible afirmar que a mayor horas de trabajo de cuidados no remunerado, hay mayor bienestar objetivo.  
 
 ```{r}
-#| results: false
+#| results: true
 #| message: false
 #| warning: false
 #| echo: false
-
-
-
+#| fig-align: center
+#| out-width: '80%'
+#| tbl-cap: "Resultados de correlación entre Horas de trabajo no remunerado y Bienestar subjetivo en hombres."
+tidy(resultado3) %>%
+ kable(format = "html", digits = 3,
+ caption = "Resultados de Correlación") %>%
+ kable_styling(bootstrap_options = "striped", full_width = FALSE)
 
 
 ```
@@ -118,7 +301,19 @@ Entre horas de trabajo de cuidados no remunerado y bienestar subjetivo la asocia
 #| warning: false
 #| fig-align: center
 #| out-width: '80%'
-
+#| fig-cap: "Matriz de correlación entre horas de trabajo de cuidados no remunerado, bienestar subjetivo y satisfacción con la vida en adultos mayores hombres."
+corrplot::corrplot(M3,
+ method = "color",
+ tl.cex = 0.7,
+ mar = c(0, 0, 0, 0),
+ addCoef.col = "black",
+ number.cex = 0.6,
+ cl.cex = 0.6,
+ type = "upper",
+ tl.col = "black",
+ col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+ bg = "white",
+ na.label = "-")
 ```
 
 Entonces, de las hipótesis anteriormente señaladas, no sería posible demostrar evidencia a favor de la primera hipótesis de que hay una asociación negativa entre la carga del trabajo de cuidados no remunerado y el bienestar objetivo de adultos mayores, pero sí existe cuando se filtra por aquellos que son específicamente cuidadores. Pero sí es posible encontrar evidencia a favor de la segunda y tercera hipótesis, porque hay una asociación negativa entre la carga del trabajo de cuidados no remunerado y el bienestar subjetivo de adultos mayores cuidadores, y también una asociación negativa entre la carga del trabajo de cuidados no remunerado y la satisfacción con la vida de adultos mayores. 
