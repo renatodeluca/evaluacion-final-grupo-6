@@ -1,8 +1,6 @@
 ﻿---
 title: "Resultados"
 ---
-Interpreta resultados, limitaciones y aportes.
-
 ## Resultados
 
 En primer lugar, para las horas promedio en un día que los adultos mayores dedican al trabajo de cuidados no remunerado, el mínimo de la muestra fue 0 horas, mientras que el máximo fue de 23.4 horas, aunque el promedio de horas gastadas fue de 2.75. Con respecto a las horas dedicadas al bienestar objetivo, lo mínimo se encuentra en 0 horas, mientras que lo máximo en 24, aunque la media está en 11.31 horas. Por otro lado, con respecto al bienestar subjetivo en cuidadores, el promedio de esta escala es 4.17, lo cual se ubica entre “Casi nunca”, y “Nunca”, lo que en general, refiere a que los cuidadores no perciben que sus labores de cuidados tengan muchos efectos negativos sobre ellos.  
