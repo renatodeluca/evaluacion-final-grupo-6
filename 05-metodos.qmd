@@ -309,7 +309,7 @@ data <- data %>%
 g_tnr_sexo <- ggplot(data %>% group_by(sexo) %>% summarise(promedio_tnr = mean(t_nr_horas, na.rm = TRUE)),
        aes(x = factor(sexo), y = promedio_tnr, fill = factor(sexo))) +
   geom_col() +
-  scale_fill_manual(values = c("#00bfc4", "#ff0cae"), labels = c("Hombres", "Mujeres")) +
+  scale_fill_manual(values = c("#7CDCB1", "#6227E4"), labels = c("Hombres", "Mujeres")) +
   labs(title = "Promedio de trabajo no remunerado por sexo (en horas)", x = "Sexo", y = "Horas diarias") +
   theme_minimal()
 g_tnr_sexo
@@ -319,7 +319,7 @@ ggsave(paste0("output/graphs/", fecha, "-trabajo-no-remunerado-por-sexo.png"),
 g_cpaf_sexo <- ggplot(data %>% group_by(sexo) %>% summarise(promedio_cpaf = mean(cpaf_horas, na.rm = TRUE)),
        aes(x = factor(sexo), y = promedio_cpaf, fill = factor(sexo))) +
   geom_col() +
-  scale_fill_manual(values = c("#00bfc4", "#f8766d"), labels = c("Hombres", "Mujeres")) +
+  scale_fill_manual(values = c("#7CDCB1", "#6227E4"), labels = c("Hombres", "Mujeres")) +
   labs(title = "Promedio de horas dedicadas a bienestar objetivo por sexo", x = "Sexo", y = "Horas diarias") +
   theme_minimal()
 g_cpaf_sexo
@@ -329,7 +329,7 @@ ggsave(paste0("output/graphs/", fecha, "-bienestar-objetivo-por-sexo.png"),
 g_bsc_sexo <- ggplot(data %>% group_by(sexo) %>% summarise(promedio_bsc = mean(escala_bsc, na.rm = TRUE)),
        aes(x = factor(sexo), y = promedio_bsc, fill = factor(sexo))) +
   geom_col() +
-  scale_fill_manual(values = c("#00bfc4", "#f8766d"), labels = c("Hombres", "Mujeres")) +
+  scale_fill_manual(values = c("#7CDCB1", "#6227E4"), labels = c("Hombres", "Mujeres")) +
   labs(title = "Promedio de bienestar subjetivo del cuidador/a por sexo", x = "Sexo", y = "Puntaje promedio (escala 1-5)") +
   theme_minimal()
 g_bsc_sexo
@@ -437,7 +437,7 @@ colnames(M) <- rownames(M)
 
 corrplot(M, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
          addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
-         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         tl.col = "black", col = colorRampPalette(c("#6227E4", "white", "#7CDCB1"))(12),
          bg = "white", na.label = "-")
 
 write.csv(M, paste0("output/tables/", fecha, "-matriz-correlacion-cuidadores.csv"))
@@ -445,7 +445,7 @@ write.csv(M, paste0("output/tables/", fecha, "-matriz-correlacion-cuidadores.csv
 png(paste0("output/graphs/", fecha, "-corrplot-cuidadores.png"), width = 1600, height = 1600, res = 300)
 corrplot(M, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
          addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
-         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         tl.col = "black", col = colorRampPalette(c("#6227E4", "white", "#7CDCB1"))(12),
          bg = "white", na.label = "-")
 dev.off()
 
@@ -481,7 +481,7 @@ colnames(M2) <- rownames(M2)
 
 corrplot(M2, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
          addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
-         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         tl.col = "black", col = colorRampPalette(c("#6227E4", "white", "#7CDCB1"))(12),
          bg = "white", na.label = "-")
 
 write.csv(M2, paste0("output/tables/", fecha, "-matriz-correlacion-mujeres-cuidadoras.csv"))
@@ -489,7 +489,7 @@ write.csv(M2, paste0("output/tables/", fecha, "-matriz-correlacion-mujeres-cuida
 png(paste0("output/graphs/", fecha, "-corrplot-mujeres-cuidadoras.png"), width = 1600, height = 1600, res = 300)
 corrplot(M2, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
          addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
-         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         tl.col = "black", col = colorRampPalette(c("#6227E4", "white", "#7CDCB1"))(12),
          bg = "white", na.label = "-")
 dev.off()
 
@@ -526,7 +526,7 @@ colnames(M3) <- rownames(M3)
 
 corrplot(M3, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
          addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
-         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         tl.col = "black", col = colorRampPalette(c("#6227E4", "white", "#7CDCB1"))(12),
          bg = "white", na.label = "-")
 
 write.csv(M3, paste0("output/tables/", fecha, "-matriz-correlacion-hombres-cuidadores.csv"))
@@ -534,7 +534,7 @@ write.csv(M3, paste0("output/tables/", fecha, "-matriz-correlacion-hombres-cuida
 png(paste0("output/graphs/", fecha, "-corrplot-hombres-cuidadores.png"), width = 1600, height = 1600, res = 300)
 corrplot(M3, method = "color", tl.cex = 0.7, mar = c(0, 0, 0, 0),
          addCoef.col = "black", number.cex = 0.6, cl.cex = 0.6, type = "upper",
-         tl.col = "black", col = colorRampPalette(c("#a118f3", "white", "#ff0cae"))(12),
+         tl.col = "black", col = colorRampPalette(c("#6227E4", "white", "#7CDCB1"))(12),
          bg = "white", na.label = "-")
 dev.off()
 ```
